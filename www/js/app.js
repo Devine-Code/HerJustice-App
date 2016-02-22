@@ -69,7 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/faq',
       views: {
         'menuContent': {
-          templateUrl: 'templates/faq.html'
+          templateUrl: 'templates/faq.html',
+		  controller: 'PlaylistsCtrl'
         }
       }
     })
@@ -110,3 +111,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
+
+
+angular.module('ionicApp', ['ionic'])
+
+.controller('MainCtrl', function($scope) {
+  $scope.items = ["green", "blue", "red"];
+  $scope.data = {};
+  $scope.data.index = 1;
+  
+  $scope.changedColor = function() {
+    alert($scope.data.index);
+  }
+})

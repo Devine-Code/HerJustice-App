@@ -1,1 +1,26 @@
 /* Empty. Add your own CSS if you like */
+
+.temp{
+	display:inline;
+	height:auto;
+	overflow:auto;
+}
+
+.plus{
+	height:5%;
+	width:10%;
+	float:left;
+}
+
+.question{
+	margin-top:10px;
+	margin-left:40px;
+	font-size: large;
+	
+}
+.answer{
+	margin-left:40px;
+	margin-right:10px;
+	font-size:medium;
+	font-style:italic;
+}

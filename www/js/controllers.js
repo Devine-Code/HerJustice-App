@@ -41,16 +41,44 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('PlaylistsCtrl', function($scope,$window) {
+  $scope.courts = [
+    { title: 'Family Court', id: 1 },
+    { title: 'Immigration Court', id: 2 },
+    { title: 'Divorce Court', id: 3 }
   ];
+  $scope.courtSelected = $scope.courts[0];  
 })
-
+.controller('temp',function($scope){
+	$scope.family=[
+	  { Question: 'family Question 1',Answer: 'family Answer 1' },
+	  { Question: 'family Question 2', Answer: 'family Answer 2' }
+  ];
+  $scope.immigration=[
+	  { Question: 'immigration Question 1',Answer: 'immigration Answer 1' },
+	  { Question: 'immigration Question 2', Answer: 'immigration Answer 2' }
+  ];
+  $scope.divorce=[
+	 { Question: 'divorce Question 1',Answer: 'divorce Answer 1' },
+	  { Question: 'divorce Question 2', Answer: 'divorce Answer 2' },
+	  { Question: 'divorce Question 3', Answer: 'divorce Answer 3' },
+	  { Question: 'divorce Question 4', Answer: 'divorce Answer 4' },
+	  { Question: 'divorce Question 5', Answer: 'divorce Answer 5' },
+	  { Question: 'divorce Question 6', Answer: 'divorce Answer 6' },
+	  { Question: 'divorce Question 7', Answer: 'divorce Answer 7' },
+	  { Question: 'divorce Question 8', Answer: 'divorce Answer 8' }
+  ];
+	$scope.followBtnImgUrl = 'img/plus.jpg';
+	$scope.toggleImage=function(court)
+  {
+	  if ($scope.followBtnImgUrl == 'img/plus.jpg') {
+			$scope.show=true;
+            $scope.followBtnImgUrl = 'img/minus.jpg';
+        } else {
+			$scope.show=false;
+            $scope.followBtnImgUrl = 'img/plus.jpg';
+        }
+  }
+})
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})

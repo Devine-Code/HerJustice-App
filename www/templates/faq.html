@@ -1,5 +1,49 @@
-<ion-view view-title="FAQ">
+<ion-view view-title="FAQs">
   <ion-content>
-    <h1>FAQ</h1>
+  <h3 style="text-align:center"> Welcome to FAQ</h3>
+  <div class="list">
+	<h4 style="text-align:center"><strong>Court Type : </strong> &nbsp;&nbsp;
+		<select ng-model="courtSelected" ng-options="court.title for court in courts">
+		</select>
+	</h4>
+</div>
+	<h4 style="text-align:center;font-size:large;font-style:italic">{{courtSelected.title}}'s FAQs</h4>
+	<div ng-if="courtSelected.title=='Family Court'">
+		<div ng-controller="temp">
+			<div ng-repeat="family_court in family" ng-controller="temp">
+				</br>
+				<div class="temp">
+					<a ng-click="toggleImage(family_court)"><img ng-src="{{followBtnImgUrl}}" class="plus"/></a>
+					<div class="question"><strong>{{family_court.Question}}</strong></div>
+				</div>
+				<div class="answer" ng-show="show">{{family_court.Answer}}</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="courtSelected.title=='Immigration Court'">
+		<div ng-controller="temp">
+			<div ng-repeat="immigration_court in immigration" ng-controller="temp">
+				</br>
+				<div class="temp">
+					<a ng-click="toggleImage(immigration_court)"><img ng-src="{{followBtnImgUrl}}" class="plus"/></a>
+					<div class="question"><strong>{{immigration_court.Question}}</strong></div>
+				</div>
+				<div class="answer" ng-show="show">{{immigration_court.Answer}}</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="courtSelected.title=='Divorce Court'">
+		<div ng-controller="temp">
+			<div ng-repeat="divorce_court in divorce" ng-controller="temp">
+			</br>
+				<div class="temp">
+					<a ng-click="toggleImage(divorce_court)"><img ng-src="{{followBtnImgUrl}}" class="plus"/></a>
+					<div class="question"><strong>{{divorce_court.Question}}</strong></div>
+				</div>
+				<div class="answer" ng-show="show">{{divorce_court.Answer}}</div>
+			</div>
+		</div>
+		
+    </div>
   </ion-content>
 </ion-view>
