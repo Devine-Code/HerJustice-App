@@ -1,5 +1,134 @@
 <ion-view view-title="Stipulation Language">
   <ion-content>
-    <h1>Stipulation Language</h1>
+    <body>
+        <!-- Declaring Controller -->       
+            <div data-ng-controller="stipLangCtrl">
+        <!-- Initating Procedural Law Drop Dowm -->     
+                <div>
+                    <b>Stip Procedure:</b> 
+                        <select ng-options="procedure as procedure.name for procedure in meta.proceduralList track by procedure.id" ng-model="current.procedure"></select> 
+                </div>
+                <br />
+        <!-- Initating Law Type Drop Dowm -->     
+                <div ng-if="current.procedure">               
+                    <div>
+                      <b>Stip Lang Law Type: </b> 
+                        <select ng-options="lawType as lawType.name for lawType in current.procedure.lawTypeList track by lawType.id" ng-model="current.lawType"></select>
+                    </div>  
+               </div>
+                <br />
+        <!--Initating Statues - Family Court Accordion-->
+              <div ng-if="current.procedure.id==1"> 
+                    <div ng-if="current.lawType.id==1">                    
+                        <div class="accordion__container">
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Family Court 1</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Family Court 2</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Family Court 3</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                        </div>
+                    </div>
+                </div>
+        <!--Initating Statues - Domestic Relations Accordion-->
+                <div ng-if="current.procedure.id==1"> 
+                    <div ng-if="current.lawType.id==2">                    
+                        <div class="accordion__container">
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Domestic Relations 1</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Domestic Relations 2</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Domestic Relations 3</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                        </div>
+                    </div>
+                </div>
+        <!--Initating Statues - Court Rules Accordion-->
+                <div ng-if="current.procedure.id==1"> 
+                    <div ng-if="current.lawType.id==3">                    
+                        <div class="accordion__container">
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Court Rules 1</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Court Rules 2</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Court Rules 3</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                        </div>
+                    </div>
+                </div>
+        <!--Initating Case Law - Custody Accordion-->
+                <div ng-if="current.procedure.id==2"> 
+                    <div ng-if="current.lawType.id==1">                    
+                        <div class="accordion__container">
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Custody 1</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Custody 2</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Custody 3</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                        </div>
+                    </div>
+                </div>
+
+        <!--Initating Case Law - Visitation Accordion-->
+                <div ng-if="current.procedure.id==2"> 
+                    <div ng-if="current.lawType.id==2">                    
+                        <div class="accordion__container">
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Visitation 1</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Visitation 2</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Visitation 3</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                            </div>
+                            <!-- .accordion__tab -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+    </body> 
   </ion-content>
 </ion-view>
