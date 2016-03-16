@@ -1,17 +1,60 @@
-<ion-view view-title="calculators">
+<ion-view view-title="Calculators" ng-controller="calculatorCtrl">
   <ion-content>
-    <div class="list">
-    	<label class="item item-input">
-    		<input type="text" placeholder="Number of Children">
-    	</label>
-    	<label class="item item-input">
-    		<input type="text" placeholder="Income of Non custodial Parent">
-    	</label>
+   <!--  <div ng-app="starter", ng-controller="calculatorCtrl"> -->
+        <div class="button-bar">
+            <a class="button" ng-click="activeButton = 'childSupport'" ng-class="{'active': activeButton ==='childSupport'}">Child Support</a>
+            <a class="button" ng-click="activeButton = 'maintenence'" ng-class="{'active': activeButton ==='maintenence'}">Maintenence</a>
+            <a class="button" ng-click="activeButton = 'businessDays'" ng-class="{'active': activeButton ==='businessDays'}">Business Days</a>
+        </div>
+    <!-- </div> -->
+
+<!-- Child support calculator -->
+    <div class="child" ng-show="activeButton === 'childSupport'" ng-controller="supportCtrl">
+        <div class="list">
+            <label class="item item-input">
+                <input type="number" min="1" placeholder="Number of Children" ng-model="numChildren" required>
+            </label>
+            <label class="item item-input">
+                <input type="number" placeholder="Income of Non custodial Parent" ng-model="income" required>
+            </label>
+        </div>
+
+        <button class="button button-block button-assertive" ng-click="submit()">Submit</button>
+        <br>
+        <div ng-show="show" class ="output">Amount: ${{output}}</div>
+        
     </div>
 
-    <button class="button button-large button-assertive">
-    	Submit
-    </button>
+<!-- Maintence Calculator -->
+    <div class="maintence" ng-show="activeButton === 'maintenence'">
+        <div class="selections">Select Payor:</div>
+            <ion-list>
+                <ion-radio ng-model="choice" ng-value="'custodial'"> Custodial Parent</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'nonCustodial'"> Non-Custodial Parent or No Children</ion-radio>
+            </ion-list>
+           
+            <div class="selections">Enter Incomes: </div>
+            
+            <label class="item item-input">
+                <input type="number" min="1" placeholder="Payee Income" ng-model="payeeIncome" required>
+            </label>
+            <label class="item item-input">
+                <input type="number" placeholder="Payor Income" ng-model="payorIncome" required>
+            </label>
+            <button class="button button-block button-assertive" ng-click="submit()">Submit</button>
+            <br>
+            <div ng-show="show" class ="output">Amount: ${{output}}</div>
+    </div>
+
+<!-- Business Days Calculator -->
+
+    <div class="calandar" ng-show="activeButton === 'businessDays'">
+        <label class="item item-input">
+                <input type="number" min="1" placeholder="Number of business days from today" ng-model="businessDaysNum" required>
+        </label>
+         <button class="button button-block button-assertive" ng-click="submit()">Submit</button>
+
+    </div>
 
   </ion-content>
 </ion-view>

@@ -47,6 +47,24 @@
     background: #999;
     padding: 20px;
 }
+.button {
+	font-size:13px;
+}
+
+.button.active{
+  background-color: orange !important;
+}
+
+.output {
+	font-size: 40px;
+	text-align: center;
+}
+
+.selections {
+	font-weight: bold;
+	font-size: 30px;
+	padding: 10px 10px 10px 10px;
+}
 
 /* cellpadding */
 th, td { padding: 5px; }

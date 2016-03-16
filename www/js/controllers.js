@@ -390,3 +390,31 @@ angular.module('starter.controllers', [])
                 ]
         };
 })
+
+
+.controller('supportCtrl', function($scope) {
+    //$scope.show = false;
+     $scope.submit = function() {
+      $scope.show = true;
+      var percentages = [.17, .25, .29, .31, .35]
+      var percent = percentages[$scope.numChildren - 1]
+
+      if ($scope.income > 141000) {
+        $scope.output = $scope.income * percent + " \n Note: Income greater than $141,000, court may decide not to use " + percent *100 + "% as a guideline"
+      }
+      if ($scope.numChildren >5) {
+        percent = .35
+      }
+      $scope.output = +($scope.income * percent).toFixed(8)
+
+      if (isNan($scope.output)) {
+        $scope.output = "Inputs must be numbers"
+      }
+     }
+})
+
+.controller('calculatorCtrl', function($scope) {
+
+});
+
+
