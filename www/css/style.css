@@ -1,0 +1,62 @@
+/* Empty. Add your own CSS if you like */
+
+.temp{
+	display:inline;
+	height:auto;
+	overflow:auto;
+}
+
+.plus{
+	height:5%;
+	width:10%;
+	float:left;
+}
+
+.question{
+	margin-top:10px;
+	margin-left:40px;
+	font-size: large;
+	
+}
+.answer{
+	margin-left:40px;
+	margin-right:10px;
+	font-size:medium;
+	font-style:italic;
+}
+
+.accordion__container {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.accordion__tab {
+    background: #aaa;
+    color: #fff;
+    border-bottom: 1px solid white;
+}
+
+.accordion__tab-title {
+    background: #888;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.accordion__tab-content {
+    background: #999;
+    padding: 20px;
+}
+
+/* cellpadding */
+th, td { padding: 5px; }
+
+/* cellspacing */
+table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
+table { border-collapse: collapse; border-spacing: 0; }   /* cellspacing="0" */
+
+/* valign */
+th, td { vertical-align: top; }
+
+/* align (center) */
+table { margin: 0 auto; }
