@@ -53,9 +53,21 @@ angular.module('starter.controllers', [])
 })
 .controller('temp',function($scope){
     $scope.family=[
-	  { Question: 'family Question 1',Answer: 'family Answer 1' },
-	  { Question: 'family Question 2', Answer: 'family Answer 2' }
-    ];
+	  { Question: 'Can the order of protection include the parties’ children?',
+		Answer: 'Yes.  The order can include the parties’ children and direct that the respondent “stay away” from or “refrain from” harassing the children or otherwise committing a family offense against them.  Typically, courts will grant this relief where the children have been victims of domestic violence directly at the hands of respondent rather than indirectly.  The order will likely state that it is subject to other Family Court orders, including  orders of visitation.' },
+	  { Question: 'Must parties to an order of protection have been in a long term dating relationship?',
+		Answer: 'No.  A 2008 law extends civil orders of protection to people who have had an "intimate relationship" with their alleged abusers and includes intimate partners, including dating couples, same-sex couples and teenage couples. The victims need not ever have lived with their abusers nor have been sexually intimate with them for the relationship to qualify under the law.  See FCA §§ 812, 821, 822.' },
+	  { Question: 'Can my client get a five-year order of protection?',
+		Answer: 'Yes.  If she proves “aggravating circumstances.”  See FCA §§ 842 and 827. ' },
+	  { Question: 'Do I have to get a subpoena for records from the NYPD so-ordered by the court?',
+		Answer: 'Yes.  N.Y. C.P.L.R. § 2306 provides that all subpoenas to municipal agencies, such as NYPD, requiring production of records must be so-ordered by the court.' },
+      { Question: 'If my client fled due to an incident of domestic violence, can she return to the parties’ home to get her belongings?',
+		Answer: 'Yes.  Under FCA § 442, the court can issue an order allowing a party to return to the parties’ home to get her belongings with police accompaniment.  Attorneys can request that this relief be granted in a temporary or final order of protection.' },
+	  { Question: 'Can a Family Court order of protection be extended before it expires?',
+		Answer: 'Yes.  Pursuant to a 2010 law, under FCA § 842 an order of protection can be extended for “good cause.”  In a 2016 case, the Appellate Division, Second Department, defined “good cause” to include “the nature of the relationship between the parties, taking into account their former relationship, the circumstances leading up to the entry of the initial order of protection, and the state of the relationship at the time of the request for an extension; the frequency of interaction between the parties; any subsequent instances of domestic violence or violations of the existing order of protection; and whether the current circumstances are such that concern for the safety and well-being of the petitioner is reasonable .”  Molloy v. Molloy, 2016 NY Slip Op 00366, App. Div. 2d Dep’t (Jan. 20, 2016).' },
+	  { Question: 'Must the courts recognize orders of protection issued by courts in other jurisdictions?',
+		Answer: 'Yes.  Under the 1994 federal Violence Against Women Act, courts must give “full, faith and credit” to orders issued by all other states, territories and tribunal courts so long as (1) the issuing court has jurisdiction over the parties and the subject matter according to its law; and (2) the defendant/respondent was given reasonable notice and an opportunity to be heard sufficient to protect his or her due process rights.  See 18 U.S.C. § 2265(a),(b).  The Family Court Act was amended to incorporate this provision.  See FCA § 154-e.' }
+   ];
     $scope.immigration=[
         { Question: 'immigration Question 1',Answer: 'immigration Answer 1' },
         { Question: 'immigration Question 2', Answer: 'immigration Answer 2' }
@@ -299,7 +311,7 @@ angular.module('starter.controllers', [])
                 ]
             },
             {
-                id: 2,
+                id: 3,
                 name: 'Supreme Court Criminal',
                 boroughList:
                 [

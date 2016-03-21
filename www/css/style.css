@@ -4,27 +4,60 @@
 	display:inline;
 	height:auto;
 	overflow:auto;
+	background: #aaa;
+    border-bottom: 1px solid white;
+	color: #fff;
 }
 
 .plus{
 	height:5%;
 	width:10%;
 	float:left;
+	background: #888;
 }
 
 .question{
-	margin-top:10px;
+	margin-right:10px;
 	margin-left:40px;
 	font-size: large;
+	background: #888;
+	
 	
 }
 .answer{
 	margin-left:40px;
 	margin-right:10px;
+	margin-top:2px;
 	font-size:medium;
 	font-style:italic;
+	background: #999;
+	color: #fff;
+}
+.faq__container {
+    background: #eee;
+    border: 1px solid #ccc;
 }
 
+.background{
+	background:url(../img/Her-Justice.jpg) no-repeat top center fixed;  /* 170px x 200px */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-position:fixed;
+   height:auto;
+   max-width:100%;
+   width:auto;
+   max-height:100%;
+}
+.header-temp{
+	margin-top:10px;
+	height: 70%;
+	width:100%;
+	margin-right:20px;
+	
+	
+}
 .accordion__container {
     background: #eee;
     border: 1px solid #ccc;
