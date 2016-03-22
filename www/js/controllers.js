@@ -425,7 +425,69 @@ angular.module('starter.controllers', [])
      }
 })
 
-.controller('calculatorCtrl', function($scope) {
+
+.controller('maintenanceCtrl', function($scope) {
+    $scope.submit = function() {
+        $scope.show = true;
+        if ($scope.choice == 'nonCustodial') {
+            var amt1 = .2 * $scope.payorIncome - .25 * $scope.payeeIncome
+            var amt2 = .4 * ($scope.payorIncome + $scope.payeeIncome) - $scope.payeeIncome
+            if (amt1 < amt2) {
+                $scope.output = amt1
+            }
+            else {
+                $scope.output = amt2
+            }
+        }
+        else {
+            var amt1 = .3 * $scope.payorIncome - .2 * $scope.payeeIncome
+            var amt2 = .4 * ($scope.payorIncome + $scope.payeeIncome) - $scope.payeeIncome
+            if (amt1 < amt2) {
+                $scope.output = amt1
+            }
+            else {
+                $scope.output = amt2
+            }
+        }
+
+    }
+})
+
+.controller('businessDaysCtrl', function($scope) {
+    $scope.submit = function() {
+        $scope.show = true;
+        // daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31 ,30, 31, 30, 31]
+        var date = new Date()
+        var today = new Date();
+        var todayDate = today.toISOString().substring(0, 10)
+        // var month = date.getMonth()
+        // var day = date.getDate()
+        // var year = date.getYear()
+        // var dayOfWeek = date.getDay()
+        // var daysAway = $scope.businessDaysNum
+
+        // while (daysAway != 0) {
+        //     if (dayOfWeek != 0 && dayOfWeek != 6) {
+        //         day ++;
+        //         dayOfWeek ++; 
+        //         dayOfWeek = (dayOfWeek % 7);
+        //         daysAway --;
+        //     }
+
+        // }
+        //var moment = require('moment-business-days')
+        //var july4th = '07-04';
+        // var laborDay = '09-07';
+         
+        // moment.locale('us', {
+        //    holidays: [july4th, laborDay],
+        //    holidayFormat: 'MM-DD' 
+        // });
+        // var today = new Date();
+        // var todayDate = today.toISOString().substring(0, 10)
+        // moment(todayDate , 'YYYY-MM-DD').businessAdd(3)._d
+        $scope.output = todayDate
+    }
 
 });
 

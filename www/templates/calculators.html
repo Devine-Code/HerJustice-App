@@ -1,9 +1,9 @@
-<ion-view view-title="Calculators" ng-controller="calculatorCtrl">
+<ion-view view-title="Calculators">
   <ion-content>
    <!--  <div ng-app="starter", ng-controller="calculatorCtrl"> -->
         <div class="button-bar">
             <a class="button" ng-click="activeButton = 'childSupport'" ng-class="{'active': activeButton ==='childSupport'}">Child Support</a>
-            <a class="button" ng-click="activeButton = 'maintenence'" ng-class="{'active': activeButton ==='maintenence'}">Maintenence</a>
+            <a class="button" ng-click="activeButton = 'maintenance'" ng-class="{'active': activeButton ==='maintenance'}">Maintenence</a>
             <a class="button" ng-click="activeButton = 'businessDays'" ng-class="{'active': activeButton ==='businessDays'}">Business Days</a>
         </div>
     <!-- </div> -->
@@ -26,11 +26,11 @@
     </div>
 
 <!-- Maintence Calculator -->
-    <div class="maintence" ng-show="activeButton === 'maintenence'">
+    <div class="maintenance" ng-show="activeButton === 'maintenance'" ng-controller='maintenanceCtrl'>
         <div class="selections">Select Payor:</div>
             <ion-list>
-                <ion-radio ng-model="choice" ng-value="'custodial'"> Custodial Parent</ion-radio>
-                <ion-radio ng-model="choice" ng-value="'nonCustodial'"> Non-Custodial Parent or No Children</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'nonCustodial'"> Non-Custodial Parent</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'custodial'"> Custodial Parent or No Children</ion-radio>
             </ion-list>
            
             <div class="selections">Enter Incomes: </div>
@@ -48,11 +48,12 @@
 
 <!-- Business Days Calculator -->
 
-    <div class="calandar" ng-show="activeButton === 'businessDays'">
+    <div class="calandar" ng-show="activeButton === 'businessDays'" ng-controller='businessDaysCtrl'>
         <label class="item item-input">
                 <input type="number" min="1" placeholder="Number of business days from today" ng-model="businessDaysNum" required>
         </label>
          <button class="button button-block button-assertive" ng-click="submit()">Submit</button>
+         <div ng-show="show" class ="output">{{output}}</div>
 
     </div>
 
