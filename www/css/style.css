@@ -76,6 +76,10 @@
     cursor: pointer;
 }
 
+.accordion__tab-title > i {
+	float: right; 
+	left: 0;
+}
 .accordion__tab-content {
     background: #999;
     padding: 20px;

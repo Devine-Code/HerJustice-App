@@ -1,3 +1,5 @@
+
+
 <ion-view view-title="Substantive/Procedural Law">
     <ion-content>
         <body>
@@ -17,112 +19,186 @@
                     </div>  
                </div>
                 <br />
-        <!--Initating Statues - Family Court Accordion-->
+        <!--Initating Statutes - Family Court Act Accordion-->
               <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==1">                    
                         <div class="accordion__container">
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Family Court 1</div>
+
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Family Court Act 1 
+                                		<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+                                </div>
+
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Family Court 2</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Family Court Act 2
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Family Court 3</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Family Court Act 3
+									<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
                     </div>
                 </div>
-        <!--Initating Statues - Domestic Relations Accordion-->
+        <!--Initating Statutes - Domestic Relations Law Accordion-->
                 <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==2">                    
                         <div class="accordion__container">
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Domestic Relations 1</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Domestic Relations 1
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><b><h6>Valuation Date (Business and other assets)</h6></b><br />
+                                    <u>McSparron v. McSparron</u>,87 N.Y.2d 275, 639 N.Y.S.2d 265 (1995).  “Domestic Relations Law 236B(l)(c) provides that the classification of property as “marital” or separate” is governed by the date on which the matrimonial action was commenced or the parties’ separation agreement executed.  However, the equitable distribution statute does not specify the date that is to be used as the touchstone for measuring the value of the marital property (citations omitted).  Thus, the appropriate date for measuring the value of marital property has been left to the sound discretion of the trial courts, which should make their determinations with due regard for all relevant facts and circumstances (citations omitted).” “In attempting to select a suitable valuation date, some courts have drawn a distinction between “active” assets (i.e., those whose value depends on the labor of a spouse) and “passive assets” (i.e., those whose value depends only on market conditions).  These courts have concluded that “active” assets should be valued only as of that date of the commencement of the action, while the valuation date for “passive” assets may be determined more flexibly (citations omitted).  Such formulations, however, may prove too rigid to be useful in particular cases.  Thus, they should be regarded only as helpful guideposts and not as immutable rules of law (citations omitted).”  See, e.g., Greenwald v. Greenwald, 164 A.D.2d 706, 505 N.Y.S.2d 494 (1st Dept. 1991).
+
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Domestic Relations 2</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Domestic Relations 2
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Domestic Relations 3</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Domestic Relations 3
+                                	<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
                     </div>
                 </div>
-        <!--Initating Statues - Court Rules Accordion-->
+        <!--Initating Statutes - Criminal Procedures Law and Rule Accordion-->
                 <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==3">                    
                         <div class="accordion__container">
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Court Rules 1</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Criminal Procedures Law and Rule 1
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Court Rules 2</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Criminal Procedures Law and Rule 2
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Court Rules 3</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Criminal Procedures Law and Rule 3
+                                	<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
                     </div>
                 </div>
-        <!--Initating Case Law - Custody Accordion-->
+        <!--Initating Case Law - Family Law Accordion-->
                 <div ng-if="current.procedure.id==2"> 
                     <div ng-if="current.lawType.id==1">                    
                         <div class="accordion__container">
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Custody 1</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Child Support
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><b><h5>Tax Exemptions</h5></b>
+                                    <u>Gundlach v. Gundlach</u>,223 A.D.2d 942, 636 N.Y.S.2d 914 (Third Dept. 1996).<br />
+                                    We find no abuse of discretion in Supreme Court's failure to grant defendant's request for permission to claim two of the children as tax exemptions. As the noncustodial parent, defendant was not entitled to the tax exemptions absent plaintiff's written release (see, Carpenter v. Carpenter, supra, 202 A.D.2d at 815, 608 N.Y.S.2d 751). Furthermore, Supreme Court noted that it had considered the tax consequences to each party in determining equitable distribution
+                                    <br />
+                                    <br />
+                                    <b><h5>Calculating child support above the statutory ceiling:</h5></b>
+                                    <u>Cassano v. Cassano, 85 N.Y. 2d 649 </u>(Court of Appeals sets factors for applying Child Support Standards Act (CSSA) to parental income above the statutory ceiling)
+                                    <br />
+                                    <br />
+                                    <b><h5>Maintaining the child’s standard of living and the child’s actual needs:</h5></b>
+                                    <u>Blaikie v. Mortner, 274 A.D.2d 95 </u>(maintaining standard of living the child would have enjoyed is an important factor in determining child support above the statutory ceiling);
+                                    <br />
+                                    <br />
+                                    <u>Callen v. Callen, 287 A.D.2d 818 </u>(lower court correctly deviated from the CSSA where results would be unjust and inappropriate, given the appropriate statutory factors and the children’s unchanged standard of living);
+                                    <br />
+                                    <br />
+                                    <u>Reis v. Zimmer, 263 A.D.2d 136</u>,(improvident exercise of discretion in applying percentages above the statutory ceiling where reasonable needs of the child were met)
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Custody 2</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Spousal Support
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')"><b><h6>Maintenance- October 12, 2010 Temporary Maintenance Formula applied</h6></b> <br />
+                                    <u>Khaira v. Khaira</u>,93 A.D.3d 194, 938 N.Y.S.2d 513 (First Dept. 2012).  Husband voluntarily moved out of marital residence in September 2010, and wife commenced instant action for divorce in October 2010. Wife moves for pendente lite maintenance and child support and for husband to pay carrying costs for marital residence, childcare expenses and healthcare expenses for the family. DRL § 236(B)(5–a), effective October 12, 2010, reflects substantial change in approach to temporary maintenance. Courts applying that provision observed that pendente lite maintenance was awarded to "tide over the more needy party, not to determine the correct ultimate distribution and to ensure that a needy spouse is provided with funds for his or her support and reasonable needs". See, <u>Iannone v. Iannone</u>, 31 A.D.3d 713, 714 [2006]. The new provision, rather than aiming merely to "tide over" the non-monied spouse, creates a substantial presumptive entitlement.
+                                    <br />
+                                    </br>
+                                    "The new formula for temporary maintenance requires the court to begin with the parties' gross income as reflected in their most recent federal tax returns, less FICA and city taxes. The court must make two alternate initial calculations, based on the payee's income and the payor's income up to an initial cap of $500,000: first, the difference between 30% of the payor's income and 20% of the payee's income, and second, 40% of the parties' combined incomes, less the payee's income. The lesser of the results of these two calculations is the "guideline amount of temporary maintenance" (§ 236[B][5–a][c][1]). Where the payor's income exceeds $500,000, "the court shall determine any additional guideline amount of temporary maintenance through consideration of [19 enumerated] factors" (§ 236[B][5–a][c][2][a]), and "shall set forth the factors it considered and the reasons for its decision" (subd [c][2][b]). Next, the court must consider whether the guideline amount—the presumptive award—would be "unjust or inappropriate," on consideration of 17 enumerated factors (§ 236[B][5–a][e][1])."
+                                    <br />
+                                    <br />
+                                    The Court applied $500,000 cap to husband’s income with wife’s income at $60,000. First, it subtracted 20% of $60,000 ($12,000) from 30% of $500,000 ($150,000), arriving at $138,000; then second, calculated 40% of $560,000 ($224,000), then deducted $60,000, arriving at $164,000; lesser of two calculations, $138,000, found to be guideline amount. However, court awarded wife $20,041 in unallocated spousal and child support without setting out a calculation of appropriate child support and without discussing or even mentioning factors set forth in DRL § 236[B][5–a][c][2]. Motion court did not strictly comply with requisites of DRL § 236(B)(5–a). 25% of $130,000 statutory cap would have been presumptive child support award of $2,418 per month.
+                                    <br />
+                                    <br />
+                                    “No language in either the new temporary maintenance provision or the CSSA specifically addresses whether the statutory formulas are intended to include the portion of the carrying costs of their residence attributable to the non-monied spouse and the children."
+                                    <br />
+                                    <br />
+                                    Because there is no mention of payment of carrying charges for marital residence in the statute, Appellate Division viewed the new maintenance formula as covering all of spouse’s basic living expenses, including housing costs and costs for food, clothing and other usual expenses. 
+                                    <br />
+                                    <br />
+                                    <u>Helen Li-Chuan C. Su v. Glen C. Su</u> (2015 WL 2400234)(Second Dept. 2015).  Supreme Court appropriately downwardly deviated from the presumptive award of temporary maintenance to award Defendant husband $200 temporary maintenance per month, as formula set forth in DRL Section 236(B)(5—a)(c) intended to cover all of payee spouse’s basic living expenses, including housing costs of food and clothing.  In this case, nearly all of defendant’s basic living expenses were already being paid by Plaintiff who was directed to pay 100% of the carrying charges associated with the marital residence which included the mortgage, gas, electricity, telephone, water, groceries, home entertainment, household repairs, appliances, laundry, gardening/landscaping, and snow removal.
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Custody 3</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Custody/Visitation
+                                	<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')"><b><h6>Custody-Transfer without a hearing</h6></b> <br />
+                                    <u>Capolino v. Capolino</u>,174 A.D.2d 825, 570 N.Y.S.2d 753 (Third Dept. 1991).The Supreme Court erred in awarding plaintiff pendente lite custody without conducting hearing. In support of his application for custody, defendant submitted sworn affidavit in which he described various incidents from which one might infer that plaintiff was unfit parent and that she neglected children. Plaintiff submitted reply affidavit sharply refuting defendant's characterization of those incidents. Supreme Court made no determination with respect to custody and directed that children's residential care be with plaintiff in marital home. Court's order did not provide defendant with any visitation with children. "While this sort of de facto custody determination has received appellate approval on at least one occasion (see, Askinas v. Askinas, 155 A.D.2d 498, 547 N.Y.S.2d 360), in that case there was no record evidence of parental unfitness and the court provided the noncustodial parent with regular and meaningful visitation. Given the striking contradictions of the affidavits in the case at bar, we believe that Supreme Court should have held a hearing prior to making its order."
+
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
+                            <div class="accordion__tab">
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab four')">Family Offense
+                                <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">Article 3 content goes here!</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-        <!--Initating Case Law - Visitation Accordion-->
+        <!--Initating Case Law - Matrimonial Law Accordion-->
                 <div ng-if="current.procedure.id==2"> 
                     <div ng-if="current.lawType.id==2">                    
                         <div class="accordion__container">
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Visitation 1</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Divorce Contested
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+                                </div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><b>DeJesus v. DeJesus</b>,90 N.Y.2d 643, 665 N.Y.S.2d 36 (1997) “…while the method of equitable distribution of marital property is properly a matter within the trial court's discretion, the initial determination of whether a particular asset is marital or separate property is a question of law, subject to plenary review on appeal. 
+                                    The Domestic Relations Law defines marital property as "all property acquired by either or both spouses during the marriage and before the execution of a separation agreement or the commencement of a matrimonial action" (Domestic Relations Law ' 236[B][1][c] ). 
+                                    The statute is sweeping and "recognizes that spouses have an equitable claim to things of value arising out of the marital relationship" (O'Brien v. O'Brien, 66 N.Y.2d 576, 583, 498 N.Y.S.2d 743, 489 N.E.2d 712 [emphasis added] ). Consequently, this Court has held "marital property" to include a wide range of intangible interests which in other contexts might not be recognized as divisible property at all.
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Visitation 2</div>
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Divorce Un-contested
+                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                                </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Visitation 3</div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
