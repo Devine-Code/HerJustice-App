@@ -1,38 +1,8 @@
 /* Empty. Add your own CSS if you like */
 
-.temp{
-	display:inline;
-	height:auto;
-	overflow:auto;
-	background: #aaa;
-    border-bottom: 1px solid white;
-	color: #fff;
-}
 
-.plus{
-	height:5%;
-	width:10%;
-	float:left;
-	background: #888;
-}
 
-.question{
-	margin-right:10px;
-	margin-left:40px;
-	font-size: large;
-	background: #888;
-	
-	
-}
-.answer{
-	margin-left:40px;
-	margin-right:10px;
-	margin-top:2px;
-	font-size:medium;
-	font-style:italic;
-	background: #999;
-	color: #fff;
-}
+
 .faq__container {
     background: #eee;
     border: 1px solid #ccc;
@@ -42,7 +12,6 @@
 	background:url(../img/Her-Justice.jpg) no-repeat top center fixed;  /* 170px x 200px */
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 	background-position:fixed;
    height:auto;

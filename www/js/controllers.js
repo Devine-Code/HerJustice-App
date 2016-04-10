@@ -43,15 +43,14 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('PlaylistsCtrl', function($scope,$window) {
+.controller('FAQCtrl', function($scope,$window) {
     $scope.courts = [
-      { title: 'Family Court', id: 1 },
-      { title: 'Immigration Court', id: 2 },
-      { title: 'Divorce Court', id: 3 }
+      { title: 'General Family Court', id: 1 },
+      { title: 'Custody/Visitation Court', id: 2 }
     ];
     $scope.courtSelected = $scope.courts[0];  
 })
-.controller('temp',function($scope){
+.controller('courtFAQ',function($scope){
     $scope.family=[
 	  { Question: 'Can the order of protection include the parties’ children?',
 		Answer: 'Yes.  The order can include the parties’ children and direct that the respondent “stay away” from or “refrain from” harassing the children or otherwise committing a family offense against them.  Typically, courts will grant this relief where the children have been victims of domestic violence directly at the hands of respondent rather than indirectly.  The order will likely state that it is subject to other Family Court orders, including  orders of visitation.' },
@@ -68,29 +67,20 @@ angular.module('starter.controllers', [])
 	  { Question: 'Must the courts recognize orders of protection issued by courts in other jurisdictions?',
 		Answer: 'Yes.  Under the 1994 federal Violence Against Women Act, courts must give “full, faith and credit” to orders issued by all other states, territories and tribunal courts so long as (1) the issuing court has jurisdiction over the parties and the subject matter according to its law; and (2) the defendant/respondent was given reasonable notice and an opportunity to be heard sufficient to protect his or her due process rights.  See 18 U.S.C. § 2265(a),(b).  The Family Court Act was amended to incorporate this provision.  See FCA § 154-e.' }
    ];
-    $scope.immigration=[
-        { Question: 'immigration Question 1',Answer: 'immigration Answer 1' },
-        { Question: 'immigration Question 2', Answer: 'immigration Answer 2' }
+    
+    $scope.custody=[
+       { Question: 'What is Joint Custody?',Answer: '“Joint legal custody” is when each parent shares in the decision-making with regard to the subject child/ren. “Joint physical custody” is the shared actual physical possession of the child “Joint physical custody” means that the child is living with one parent or the other in accordance with a set schedule, and the implication is that this is more or less equal time. Joint decision-making and shared custody presupposes an amicable relationship between the parties. When the parents are “antagonistic and embattled”, joint custody is generally inappropriate, as when there is domestic violence – abusers often try to use their status as joint custodians to further control and manipulate the other parent. Court decisions are trending towards awards of “joint custody” and parties may feel pressured to settle on this. Advocacy is required to avoid situations where joint custody would create and unsafe. Note: joint physical custody can impact a determination of child support.' },
+        { Question: 'CAN AN ORDER OF CUSTODY/VISITATION BE MODIFIED?', Answer: 'Yes. On a showing of a “change in circumstances”, the court may consider a change in custody, as long as such a change is in the best interests of the child.' },
+        { Question: 'CAN A COURT ORDER THAT VISTATION BE SUPERVISED?', Answer: 'Yes. If there are safety concerns, or if there has been a prolonged separation between the child and the parent.  Supervised visitation is generally short-term, eventually leading to more expanded visitation. Although there are a number of organizations which provide supervised visitation services, there are waiting lists and fees associated with many programs. Court-ordered institutional supervised visits generally result in a report submitted to the court which describes how the visitation went, and is generally limited to only 3 sessions. More long-term supervision may be provided by a family member or friend who is willing to participate. It is advisable to interview any proposed supervisor to inquire whether they understand the responsibilities and possible negative consequences of supervising visits, especially in domestic violence situations.' },
+        { Question: 'CAN A COURT ORDER THAT THERE BE NO VISITATION AT ALL?', Answer: 'Yes, but only in very rare and egregious instances. As courts start from a position that each parent is fit and that it is inherently in the best interest of a child to have a significant relationship with each parent, it must be proven that the non-custodial parent is unfit and that it is in the best interest of the child that there be no visitation. Domestic violence against the other parent is NOT, in and of itself, a basis for a denial of visitation outright.' }
     ];
-    $scope.divorce=[
-       { Question: 'divorce Question 1',Answer: 'divorce Answer 1' },
-        { Question: 'divorce Question 2', Answer: 'divorce Answer 2' },
-        { Question: 'divorce Question 3', Answer: 'divorce Answer 3' },
-        { Question: 'divorce Question 4', Answer: 'divorce Answer 4' },
-        { Question: 'divorce Question 5', Answer: 'divorce Answer 5' },
-        { Question: 'divorce Question 6', Answer: 'divorce Answer 6' },
-        { Question: 'divorce Question 7', Answer: 'divorce Answer 7' },
-        { Question: 'divorce Question 8', Answer: 'divorce Answer 8' }
-    ];
-    $scope.followBtnImgUrl = 'img/plus.jpg';
-    $scope.toggleImage=function(court)
+    $scope.show = false;
+    $scope.toggleTab=function()
     {
-        if ($scope.followBtnImgUrl == 'img/plus.jpg') {
-            $scope.show=true;
-            $scope.followBtnImgUrl = 'img/minus.jpg';
+        if ($scope.show==false) {
+            $scope.show=true;   
         } else {
             $scope.show=false;
-            $scope.followBtnImgUrl = 'img/plus.jpg';
         }
     }
 })
@@ -452,7 +442,9 @@ angular.module('starter.controllers', [])
 
     }
 })
+.controller('PlaylistsCtrl', function($scope) {
 
+})
 .controller('businessDaysCtrl', function($scope) {
     $scope.submit = function() {
         $scope.show = true;

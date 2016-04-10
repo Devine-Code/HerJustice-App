@@ -69,8 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/faq',
       views: {
         'menuContent': {
-          templateUrl: 'templates/faq.html',
-		  controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/faq.html'
+		  
         }
       }
     })
