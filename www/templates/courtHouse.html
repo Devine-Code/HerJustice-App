@@ -3,20 +3,20 @@
     <body>
        <!-- Declaring Controller -->       
             <div data-ng-controller="courtHouseCtrl">
-        <!-- Initating Borough Drop Dowm -->      
+        <!-- Initating Court Type Law Drop Dowm -->     
                 <div>
-                    <b>Borough:</b> 
-                        <select ng-options="borough as borough.name for borough in meta.boroughList track by borough.id" ng-model="current.borough"></select> 
+                     <b>Court Type:</b> 
+                         <select ng-options="court as court.name for court in meta.courtList track by court.id" ng-model="current.court"></select> 
+                 </div>
+                 <br />
+         <!-- Initating Borough Drop Dowm -->     
+                 <div ng-if="current.court">               
+                     <div>
+                      <b>Borough: </b> 
+                         <select ng-options="borough as borough.name for borough in current.court.boroughList track by borough.id" ng-model="current.borough"></select>
+                     </div>  
                 </div>
-                <br />
-        <!-- Initating Court Drop Dowm -->   
-                <div ng-if="current.borough">               
-                    <div>
-                      <b>Court Type: </b> 
-                        <select ng-options="court as court.name for court in current.borough.courtList track by court.id" ng-model="current.court"></select>
-                    </div>  
-               </div> 
-               <br />
+                 <br />
         
         <!--Initating Manhattan - Supreme Court Accordion-->
               <div ng-if="current.borough.id==1"> 
