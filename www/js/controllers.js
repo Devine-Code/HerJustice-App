@@ -169,7 +169,7 @@ angular.module('starter.controllers', [])
         [
             {
                 id: 1,
-                name: 'Statues',
+                name: 'Statutes',
                 lawTypeList:
                 [
                     {

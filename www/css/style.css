@@ -40,7 +40,7 @@
 }
 
 .accordion__tab-title {
-    background: orange;
+    background: red;
     padding: 5px;
     cursor: pointer;
 }
@@ -51,7 +51,7 @@
 }
 .accordion__tab-content {
     background: #999;
-    color:red;
+    color:black;
     padding: 20px;
 }
 .button {
@@ -83,7 +83,7 @@
 }
 
 .menu-header {
-	background-color: red;
+	background-color: orange;
 }
 
 /* cellpadding */
