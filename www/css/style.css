@@ -98,3 +98,7 @@ th, td { vertical-align: top; }
 
 /* align (center) */
 table { margin: 0 auto; }
+
+p{
+  text-indent: 50px
+}

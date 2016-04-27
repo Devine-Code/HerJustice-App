@@ -1,192 +1,126 @@
-<ion-view view-title="Stipulation Language">
+<ion-view view-title="Settlement Tools">
   <ion-content>
     <body>
         <!-- Declaring Controller -->       
-            <div data-ng-controller="stipLangCtrl">
-        <!-- Initating Procedural Law Drop Dowm -->     
-                <div>
-                    <b>Procedure:</b> 
-                        <select ng-options="procedure as procedure.name for procedure in meta.proceduralList track by procedure.id" ng-model="current.procedure"></select> 
-                </div>
-                <br />
-        <!-- Initating Law Type Drop Dowm -->     
-                <div ng-if="current.procedure">               
-                    <div>
-                      <b>Law Type: </b> 
-                        <select ng-options="lawType as lawType.name for lawType in current.procedure.lawTypeList track by lawType.id" ng-model="current.lawType"></select>
-                    </div>  
-               </div>
-                <br />
-        <!--Initating Family Court - Order of Protection Accordion-->
-              <div ng-if="current.procedure.id==1"> 
-                    <div ng-if="current.lawType.id==1">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Order of Protection 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Order of Protection 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Order of Protection 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+            <div data-ng-controller="stipLangCtrl"> 
+        
+        <!--Initating  Accordion-->                   
+                <div class="accordion__container">
+                    <div class="accordion__tab">
+                        <div class="accordion__tab-title" data-ng-click="openTab('tab one')">General Provisions
+                            <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}">   
+                            </i>
+                        </div>
+                        <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">
+                            <u>Additional Instruments</u> - Each party, from time to time, at the request of the other or the legal representatives of the other, shall execute, acknowledge, and deliver to the other party any and all further instruments which may reasonably be required to give full force and effect to the provisions of this Stipulation.
+                            <br>
+                            <br>
+                            <u>Binding Effect</u> - Except as otherwise stated herein, all the provisions of this Stipulation shall be binding upon the respective heirs, next of kin, executors and administrators of the parties.
+                            <br>
+                            <br>
+                            <u>Disclosure</u> - 
+                            <p>
+                            <br>1. The Wife declares that she has independent legal advice by counsel of her own selection, having been represented by Lisa Advocate, Advocate & Advocate, West 36th Street, Suite 903, New York, New York, and the Husband having by his own volition represented himself Pro Se, his residence, ___________Bronx, New York. <br> 2. The Husband acknowledges that he has been furnished with a copy of this Agreement prior to its execution; that he has had opportunity to consult with and retain counsel of his own choosing; that he has been urged and advised by the Wife and by her attorneys to retain counsel; that he has freely decided not to do so, and has refused to do so. <br> 3.  This Stipulation is entire and complete and embodies all understandings and Stipulations between the parties and no representations, Stipulations, promises, undertakings or warranties of any kind or nature have been made to the other to induce the making of this Stipulation except as is expressly set forth in this Stipulation, or in simultaneously executed documents, if any, and neither of the parties shall assert to the contrary that there is any other Stipulation, oral or written, existing between them.  <br> 4. The Husband acknowledges that he has not been and is not under the influence of any intoxicating alcohol, drug or narcotic in connection with the negotiation of this Stipulation and its execution. He completely understands and assents to its terms and provisions, and has read the Stipulation prior to execution while not under the influence of any intoxicating substances.
+                            </p>
+                            <br>
+                            <u>Drafting</u> - The drafting of this Stipulation by either party or either party’s attorney shall have no bearing on the interpretation of this Stipulation, it being recognized that both the Husband and Wife have had a full and fair opportunity to negotiate and review the terms hereof and to contribute to the substance and form of this Stipulation.
+                            <br>
+                            <br>
+                            <u>Effective Date</u> - This Stipulation shall become effective when the parties have exchanged original counterparts of this Stipulation bearing the notarized signature of each party. 
+                            <br>
+                            <br>
+                            <u>Entire Stipulation</u> - This Stipulation constitutes the entire understanding of the parties.  There are no representations, promises, warranties, covenants or undertakings other than those expressly set forth herein.
+                            <br>
+                            <br>
+                            <u>Estate Obligations</u> - This Stipulation shall bind and inure to the benefit of the parties hereto, their heirs, executors, administrators, representatives and assigns.
+                            <br>
+                            <Br>
+                            <u>Governing Law</u> - All matters relating to the execution, validity, interpretation and performance of this Stipulation shall be governed, construed and determined in accordance with the laws of the State of New York, regardless of the forum in which an action in law or in equity may be brought by either of the parties hereto.
+                            <br>
+                            <br>
+                            <u>Modification</u> - No provision of this Stipulation shall be changed or modified, nor shall this Stipulation be discharged or terminated in whole or in part, except by an instrument in writing signed and acknowledged by the party against whom the change, modification, discharge or termination is claimed or sought to be enforced.
+                            <br>
+                            <br>
+                            <u>Notices and Change of Address</u> - 
+                            <p>
+                            <br>
+                            1. Notices required by this Stipulation to be sent to the Wife shall be sufficient if sent by the Husband or his representative by certified mail, return receipt requested to the Wife, at her residence, ___________ Bronx, New York, or to such address which the Wife, by certified mail notice, shall have advised the Husband for the sending of such notices.  <br>2. Notices required by this Stipulation to be sent to the Husband by the Wife shall be sufficient if sent by the Wife and or her representative by certified mail, return receipt requested to the Husband, ___________ Bronx, New York, or to such other address which the Husband, by certified mail notice, shall have advised the Wife for the sending of such notices.  <br>3. A written acknowledgment of the receipt of a notice, however, if signed by the party to whom the notice is addressed, shall be sufficient and need not be sent by certified mail.  <br>4. The parties agree that each will notify the other of any change of address and/or telephone number within five (5) days of such change.
+                            </p>
+                            <Br>
+                            <u>No Waiver</u> - The failure of either of the parties to insist, in any one or more instances, upon a strict performance of any of the covenants or provisions of this Stipulation shall not be construed as a waiver or a relinquishment for the future of such covenant or provision, but the same shall continue and remain in full force and effect.
+                            <br>
+                            <br>
+                            <u>Notices</u> - All notices sent to the Wife shall be sent by certified mail to her address set forth on the first page of this Stipulation, or to any new place of permanent residence acquired hereafter, notice of which new residence she shall have given to the Husband.  All notices sent to the Husband shall be sent by certified mail to his address set forth on the first page of this Stipulation, or to any new place of permanent residence acquired hereafter, notice of which new residence he shall have given to the Wife.
+                            <br>
+                            <br>
+                            <u>Possible Invalidity</u> - In case any provision of this Stipulation shall be held to be contrary to, or invalid under, the law of any country, state, or other jurisdiction, such illegality or invalidity shall not affect in any way the other provisions hereof, all of which shall continue, nevertheless, in full force and effect; any provision which is held to be illegal or invalid in any country, state or other jurisdiction shall, nevertheless, remain in full force and effect in any country, state or jurisdiction in which such provision is legal and valid.
+                            <br>
+                            <br>
+                            <u>Reconciliation</u> - This Stipulation shall not be invalidated or otherwise affected by a temporary reconciliation between the parties hereto, or a resumption of marital relations between them, unless said reconciliation or said resumption be accompanied by a written statement signed by the parties with respect to same, additionally setting forth that they are canceling this Stipulation.  This Stipulation shall not be invalidated or otherwise affected by any decree or judgment of separation, annulment or divorce made by any court in this action or in any other action which may hereafter be instituted by either party against the other for a separation, annulment or divorce, and the obligations and covenants of this Stipulation shall be incorporated by a reference in and shall survive any decree or judgment or separation or divorce and shall not merge therein. The parties shall not, in any action or proceeding for divorce or similar relief either previously commenced or hereafter commenced, seek any different or additional relief than the terms set forth herein.
+                            <br>
+                            <br>
+                            <u>Signature in Counterpart</u> - This Stipulation may be executed by separate signatures and acknowledgements of the parties on counterpart copies hereof.
+                            <br>
+                            <br>
+                            <u>Taxes</u> - 
+                            <p>
+                            <br>
+                            1. The parties warrant and represent that to the best of their knowledge, all federal, state and local income taxes on all joint income tax returns heretofore filed by the parties have been paid and that no interest or penalty is due with respect thereto and that no tax deficiency proceeding is pending or threatened against them.  <br>2. Nevertheless, with respect to all Federal, State and local tax returns, heretofore jointly filed or hereafter to be jointly filed by them, the parties agree that the Husband shall assume liability for all taxes and any claim on account of additional taxes, interest, penalty or adjustment which may ever be made, and the cost of any attorney's or accountant's fees incurred in defending any such claim, and shall indemnify and hold the Wife harmless from all liability therefor.
+                            </p>
+                            <br>
+                            <u>Voluntary Execution</u> - Each party represents that he or she has had access to adequate information concerning the financial status of the parties.  Each party represents that he or she has had the opportunity to obtain legal advice from counsel of his or her own selection in connection with the negotiation and execution of this Stipulation.  Each party represents that she or he has carefully read this Stipulation, understands its provisions, believes this Stipulation to be fair and reasonable, and signs this Stipulation freely and voluntarily.  Each party represents that he or she fully understands his and her legal rights and obligations with respect to the subject matter of this Stipulation and particularly his or her rights under the Equitable Distribution law now in effect in the State of New York.  <br>(a) The Husband has elected not to obtain independent legal advice and counsel, despite having been urged to do so by the Wife’s counsel.  The Husband hereby explicitly waives his right to legal advice and counsel by an independent attorney, and agrees that he will not at any time in the future challenge this Agreement on the grounds that he signed it without first obtaining independent advice and counsel. <br>(b) Although the Husband elected not to seek advice from a separate attorney, the Husband is satisfied that he understands the provisions of this Agreement, as well as his right to full disclosure from the Wife, and has given due consideration to them; he has waived financial disclosure, and has explicitly waived any claims for future support and to marital property, except as set forth in Articles ____ and ____ of this Agreement.   The Husband agrees that he will not at any time in the future seek modification or nullification of this Agreement on the grounds that he did not have separate and independent legal counsel at the time of the negotiation and execution of this Agreement.
+                            </p>               
                         </div>
                     </div>
-                </div>
-        <!--Initating Family Court - Child Support, Spousal Support and Spousal Maintenance Accordion-->
-                <div ng-if="current.procedure.id==1"> 
-                    <div ng-if="current.lawType.id==2">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Child Support, Spousal Support and Spousal Maintenance 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Child Support, Spousal Support and Spousal Maintenance 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Child Support, Spousal Support and Spousal Maintenance 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+                    <!-- .accordion__tab -->
+                    <div class="accordion__tab">
+                        <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Settlement Checklist
+                            <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+                        </div>
+                        <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
+                            <!--<table>
+                              <tr ng-repeat="x in checkDirectoryHead.checkListHead">
+                                <td>{{ x.title }}</td>
+                                <td>{{ x.list }}</td>
+                              </tr>-->
+                            <!--<TABLE>
+                              <tr ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
+                                <td>{{ x.title }}</td>
+                                <td>{{ x.list }}</td>
+                              </tr>
+                            </TABLE>-->
+                              <ul style="list-style-type:none" ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
+                                <li><u>{{ x.title }}</u></li>
+                                <li ng-if="x.list"><input type="checkbox" value={{x.id}}> {{ x.list }}</li>
+                                <li ng-if="x.list1"><input type="checkbox" value={{x.id}}> {{ x.list1 }}</li>
+                                <li ng-if="x.list2"><input type="checkbox" value={{x.id}}> {{ x.list2 }}</li>
+                                <li ng-if="x.list3"><input type="checkbox" value={{x.id}}> {{ x.list3 }}</li>
+                                <li ng-if="x.list4"><input type="checkbox" value={{x.id}}> {{ x.list4 }}</li>
+                                <li ng-if="x.list5"><input type="checkbox" value={{x.id}}> {{ x.list5 }}</li>
+                                <li ng-if="x.list6"><input type="checkbox" value={{x.id}}> {{ x.list6 }}</li>
+                                <li ng-if="x.list7"><input type="checkbox" value={{x.id}}> {{ x.list7 }}</li>
+                                <Br>
+                            </ul>
+                            <!--</table>-->
                         </div>
                     </div>
-                </div>
-        <!--Initating Family Court - Custody and  Visitation Accordion-->
-                <div ng-if="current.procedure.id==1"> 
-                    <div ng-if="current.lawType.id==3">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Custody and Visitation 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Custody and Visitation 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Custody and Visitation 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+                    <!-- .accordion__tab -->
+                    <div class="accordion__tab">
+                        <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Acknowledgement Language
+                            <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                         </div>
+                        <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                     </div>
-                </div>
-        <!--Initating Family Court - Paternity Accordion-->
-                <div ng-if="current.procedure.id==1"> 
-                    <div ng-if="current.lawType.id==4">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Paternity 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Paternity 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Paternity 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+                    <!-- .accordion__tab -->
+                    <div class="accordion__tab">
+                        <div class="accordion__tab-title" data-ng-click="openTab('tab four')">Sample Signature Page
+                            <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                         </div>
+                        <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">Article 3 content goes here!</div>
                     </div>
+                    <!-- .accordion__tab -->
                 </div>
-        <!--Initating Matriominal Court - Court Issue Accordion-->
-                <div ng-if="current.procedure.id==2"> 
-                    <div ng-if="current.lawType.id==1">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Court Issue 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Court Issue 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Court Issue 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                        </div>
-                    </div>
-                </div>
-
-        <!--Initating Immigration Court - Court Issue Accordion-->
-                <div ng-if="current.procedure.id==3"> 
-                    <div ng-if="current.lawType.id==1">                    
-                        <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Court Issue 1
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Court Issue 2
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Court Issue 3
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                        </div>
-                    </div>
-                </div>
-            </div>  
+            </div>            
     </body> 
   </ion-content>
 </ion-view>

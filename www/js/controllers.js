@@ -70,9 +70,9 @@ angular.module('starter.controllers', [])
     
     $scope.custody=[
        { Question: 'What is Joint Custody?',Answer: '“Joint legal custody” is when each parent shares in the decision-making with regard to the subject child/ren. “Joint physical custody” is the shared actual physical possession of the child “Joint physical custody” means that the child is living with one parent or the other in accordance with a set schedule, and the implication is that this is more or less equal time. Joint decision-making and shared custody presupposes an amicable relationship between the parties. When the parents are “antagonistic and embattled”, joint custody is generally inappropriate, as when there is domestic violence – abusers often try to use their status as joint custodians to further control and manipulate the other parent. Court decisions are trending towards awards of “joint custody” and parties may feel pressured to settle on this. Advocacy is required to avoid situations where joint custody would create and unsafe. Note: joint physical custody can impact a determination of child support.' },
-        { Question: 'CAN AN ORDER OF CUSTODY/VISITATION BE MODIFIED?', Answer: 'Yes. On a showing of a “change in circumstances”, the court may consider a change in custody, as long as such a change is in the best interests of the child.' },
-        { Question: 'CAN A COURT ORDER THAT VISTATION BE SUPERVISED?', Answer: 'Yes. If there are safety concerns, or if there has been a prolonged separation between the child and the parent.  Supervised visitation is generally short-term, eventually leading to more expanded visitation. Although there are a number of organizations which provide supervised visitation services, there are waiting lists and fees associated with many programs. Court-ordered institutional supervised visits generally result in a report submitted to the court which describes how the visitation went, and is generally limited to only 3 sessions. More long-term supervision may be provided by a family member or friend who is willing to participate. It is advisable to interview any proposed supervisor to inquire whether they understand the responsibilities and possible negative consequences of supervising visits, especially in domestic violence situations.' },
-        { Question: 'CAN A COURT ORDER THAT THERE BE NO VISITATION AT ALL?', Answer: 'Yes, but only in very rare and egregious instances. As courts start from a position that each parent is fit and that it is inherently in the best interest of a child to have a significant relationship with each parent, it must be proven that the non-custodial parent is unfit and that it is in the best interest of the child that there be no visitation. Domestic violence against the other parent is NOT, in and of itself, a basis for a denial of visitation outright.' }
+        { Question: 'Can an order of custody/visitation be modified?', Answer: 'Yes. On a showing of a “change in circumstances”, the court may consider a change in custody, as long as such a change is in the best interests of the child.' },
+        { Question: 'Can a court order that has visitation be supervised?', Answer: 'Yes. If there are safety concerns, or if there has been a prolonged separation between the child and the parent.  Supervised visitation is generally short-term, eventually leading to more expanded visitation. Although there are a number of organizations which provide supervised visitation services, there are waiting lists and fees associated with many programs. Court-ordered institutional supervised visits generally result in a report submitted to the court which describes how the visitation went, and is generally limited to only 3 sessions. More long-term supervision may be provided by a family member or friend who is willing to participate. It is advisable to interview any proposed supervisor to inquire whether they understand the responsibilities and possible negative consequences of supervising visits, especially in domestic violence situations.' },
+        { Question: 'Can there be a court order where there is no visitation at all?', Answer: 'Yes, but only in very rare and egregious instances. As courts start from a position that each parent is fit and that it is inherently in the best interest of a child to have a significant relationship with each parent, it must be proven that the non-custodial parent is unfit and that it is in the best interest of the child that there be no visitation. Domestic violence against the other parent is NOT, in and of itself, a basis for a denial of visitation outright.' }
     ];
     $scope.show = false;
     $scope.toggleTab=function()
@@ -95,7 +95,7 @@ angular.module('starter.controllers', [])
         [
             {
                 id: 1,
-                name: 'Statues', 
+                name: 'Statutes', 
                 lawTypeList:
                 [
                     {
@@ -159,50 +159,33 @@ angular.module('starter.controllers', [])
 })
 
 .controller('stipLangCtrl', function ($scope) {
-    $scope.current =
-    { procedure: null, lawType: null };
 
-
-    $scope.meta =
-    {
-        proceduralList:
-        [
-            {
-                id: 1,
-                name: 'Statutes',
-                lawTypeList:
+    $scope.checkDirectory =
+        {
+            
+            checkList:
                 [
                     {
                         id: 1,
-                        name: 'Family Court'
+                        title: 'Grounds',
+                        list: 'Resolved in whose favor?',
+                        list1: 'Party not taking divorce withdraws complaint or answer/counterclaim?',
+                        list2: 'Standard is no-fault grounds'
                     },
                     {
                         id: 2,
-                        name: 'Domestic Relations'
-                    },
-                    {
-                        id: 3,
-                        name: 'Court Rules'
+                        title: 'Marital Residence',
+                        list: 'Who will remain in home?',
+                        list1: 'Who will make mortgage payments?',
+                        list2: 'Who will pay real estate taxes?',
+                        list3: 'Who is entitled to tax deductions arising from mortgage/real estate tax payments?',
+                        list4: 'When is title to be transferred (e.g., when mortgage fully paid)?',
+                        list5: 'Foreclosure issues',
+                        list6: 'Lease adjustment necessary?',
+                        list7: 'Responsibility for condo/coop maintenance'
                     }
                 ]
-            },
-            {
-                id: 2,
-                name: 'Case Law',
-                lawTypeList:
-                [
-                    {
-                        id: 1,
-                        name: 'Custody'
-                    },
-                    {
-                        id: 2,
-                        name: 'Visitation'
-                    }
-                ]
-            }
-        ]
-    };
+        };
 
 
     // initiate an array to hold all active tabs
