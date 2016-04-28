@@ -50,30 +50,14 @@ angular.module('starter.controllers', [])
     ];
     $scope.courtSelected = $scope.courts[0];  
 })
-.controller('courtFAQ',function($scope){
-    $scope.family=[
-	  { Question: 'Can the order of protection include the parties’ children?',
-		Answer: 'Yes.  The order can include the parties’ children and direct that the respondent “stay away” from or “refrain from” harassing the children or otherwise committing a family offense against them.  Typically, courts will grant this relief where the children have been victims of domestic violence directly at the hands of respondent rather than indirectly.  The order will likely state that it is subject to other Family Court orders, including  orders of visitation.' },
-	  { Question: 'Must parties to an order of protection have been in a long term dating relationship?',
-		Answer: 'No.  A 2008 law extends civil orders of protection to people who have had an "intimate relationship" with their alleged abusers and includes intimate partners, including dating couples, same-sex couples and teenage couples. The victims need not ever have lived with their abusers nor have been sexually intimate with them for the relationship to qualify under the law.  See FCA §§ 812, 821, 822.' },
-	  { Question: 'Can my client get a five-year order of protection?',
-		Answer: 'Yes.  If she proves “aggravating circumstances.”  See FCA §§ 842 and 827. ' },
-	  { Question: 'Do I have to get a subpoena for records from the NYPD so-ordered by the court?',
-		Answer: 'Yes.  N.Y. C.P.L.R. § 2306 provides that all subpoenas to municipal agencies, such as NYPD, requiring production of records must be so-ordered by the court.' },
-      { Question: 'If my client fled due to an incident of domestic violence, can she return to the parties’ home to get her belongings?',
-		Answer: 'Yes.  Under FCA § 442, the court can issue an order allowing a party to return to the parties’ home to get her belongings with police accompaniment.  Attorneys can request that this relief be granted in a temporary or final order of protection.' },
-	  { Question: 'Can a Family Court order of protection be extended before it expires?',
-		Answer: 'Yes.  Pursuant to a 2010 law, under FCA § 842 an order of protection can be extended for “good cause.”  In a 2016 case, the Appellate Division, Second Department, defined “good cause” to include “the nature of the relationship between the parties, taking into account their former relationship, the circumstances leading up to the entry of the initial order of protection, and the state of the relationship at the time of the request for an extension; the frequency of interaction between the parties; any subsequent instances of domestic violence or violations of the existing order of protection; and whether the current circumstances are such that concern for the safety and well-being of the petitioner is reasonable .”  Molloy v. Molloy, 2016 NY Slip Op 00366, App. Div. 2d Dep’t (Jan. 20, 2016).' },
-	  { Question: 'Must the courts recognize orders of protection issued by courts in other jurisdictions?',
-		Answer: 'Yes.  Under the 1994 federal Violence Against Women Act, courts must give “full, faith and credit” to orders issued by all other states, territories and tribunal courts so long as (1) the issuing court has jurisdiction over the parties and the subject matter according to its law; and (2) the defendant/respondent was given reasonable notice and an opportunity to be heard sufficient to protect his or her due process rights.  See 18 U.S.C. § 2265(a),(b).  The Family Court Act was amended to incorporate this provision.  See FCA § 154-e.' }
-   ];
+.controller('courtFAQ',function($scope,$http){
+    $http.get("http://hjapps.herjustice.org/Query/FAQ_CustodyAndVisitation.php")
+    .success(function (response) {$scope.custody = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/FAQ_FamilyCourt.php")
+    .success(function (response) {$scope.family = response;  });
     
-    $scope.custody=[
-       { Question: 'What is Joint Custody?',Answer: '“Joint legal custody” is when each parent shares in the decision-making with regard to the subject child/ren. “Joint physical custody” is the shared actual physical possession of the child “Joint physical custody” means that the child is living with one parent or the other in accordance with a set schedule, and the implication is that this is more or less equal time. Joint decision-making and shared custody presupposes an amicable relationship between the parties. When the parents are “antagonistic and embattled”, joint custody is generally inappropriate, as when there is domestic violence – abusers often try to use their status as joint custodians to further control and manipulate the other parent. Court decisions are trending towards awards of “joint custody” and parties may feel pressured to settle on this. Advocacy is required to avoid situations where joint custody would create and unsafe. Note: joint physical custody can impact a determination of child support.' },
-        { Question: 'Can an order of custody/visitation be modified?', Answer: 'Yes. On a showing of a “change in circumstances”, the court may consider a change in custody, as long as such a change is in the best interests of the child.' },
-        { Question: 'Can a court order that has visitation be supervised?', Answer: 'Yes. If there are safety concerns, or if there has been a prolonged separation between the child and the parent.  Supervised visitation is generally short-term, eventually leading to more expanded visitation. Although there are a number of organizations which provide supervised visitation services, there are waiting lists and fees associated with many programs. Court-ordered institutional supervised visits generally result in a report submitted to the court which describes how the visitation went, and is generally limited to only 3 sessions. More long-term supervision may be provided by a family member or friend who is willing to participate. It is advisable to interview any proposed supervisor to inquire whether they understand the responsibilities and possible negative consequences of supervising visits, especially in domestic violence situations.' },
-        { Question: 'Can there be a court order where there is no visitation at all?', Answer: 'Yes, but only in very rare and egregious instances. As courts start from a position that each parent is fit and that it is inherently in the best interest of a child to have a significant relationship with each parent, it must be proven that the non-custodial parent is unfit and that it is in the best interest of the child that there be no visitation. Domestic violence against the other parent is NOT, in and of itself, a basis for a denial of visitation outright.' }
-    ];
+    
     $scope.show = false;
     $scope.toggleTab=function()
     {
