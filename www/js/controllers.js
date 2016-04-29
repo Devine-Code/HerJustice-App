@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
 	};
 	
 })
-.controller('subLawCtrl', function ($scope) {
+.controller('subLawCtrl', function ($scope,$http) {
     $scope.current =
     { procedure: null, lawType: null };
     
@@ -121,8 +121,10 @@ angular.module('starter.controllers', [])
             }
         ]
     };
-
-
+	
+	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_CaseLaw_Custody.php")
+    .success(function (response) {$scope.CaseLaw_Custody = response;  });
+	
     // initiate an array to hold all active tabs
     $scope.activeTabs = [];
 
