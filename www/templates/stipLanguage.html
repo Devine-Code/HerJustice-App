@@ -6,6 +6,7 @@
         
         <!--Initating  Accordion-->                   
                 <div class="accordion__container">
+                <!--General Provisions Tab -->
                     <div class="accordion__tab">
                         <div class="accordion__tab-title" data-ng-click="openTab('tab one')">General Provisions
                             <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}">   
@@ -72,24 +73,14 @@
                             </p>               
                         </div>
                     </div>
-                    <!-- .accordion__tab -->
+                <!-- Settlement Checklist Tab-->
                     <div class="accordion__tab">
                         <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Settlement Checklist
                             <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                         </div>
                         <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
-                            <!--<table>
-                              <tr ng-repeat="x in checkDirectoryHead.checkListHead">
-                                <td>{{ x.title }}</td>
-                                <td>{{ x.list }}</td>
-                              </tr>-->
-                            <!--<TABLE>
-                              <tr ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
-                                <td>{{ x.title }}</td>
-                                <td>{{ x.list }}</td>
-                              </tr>
-                            </TABLE>-->
-                              <ul style="list-style-type:none" ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
+                        <!--Create checkbox for checklist -->
+                            <ul style="list-style-type:none" ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
                                 <li><u>{{ x.title }}</u></li>
                                 <li ng-if="x.list"><input type="checkbox" value={{x.id}}> {{ x.list }}</li>
                                 <li ng-if="x.list1"><input type="checkbox" value={{x.id}}> {{ x.list1 }}</li>
@@ -101,25 +92,25 @@
                                 <li ng-if="x.list7"><input type="checkbox" value={{x.id}}> {{ x.list7 }}</li>
                                 <Br>
                             </ul>
-                            <!--</table>-->
                         </div>
                     </div>
-                    <!-- .accordion__tab -->
+                <!-- Acknowledgement Language Tab-->
                     <div class="accordion__tab">
                         <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Acknowledgement Language
                             <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                         </div>
                         <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
                     </div>
-                    <!-- .accordion__tab -->
+                <!-- Sample Signature Tab -->
                     <div class="accordion__tab">
                         <div class="accordion__tab-title" data-ng-click="openTab('tab four')">Sample Signature Page
                             <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                         </div>
                         <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">Article 3 content goes here!</div>
                     </div>
-                    <!-- .accordion__tab -->
+                <!-- Close accordion container -->
                 </div>
+            <!-- CloseController -->
             </div>            
     </body> 
   </ion-content>

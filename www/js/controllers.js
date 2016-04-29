@@ -80,18 +80,23 @@ angular.module('starter.controllers', [])
     }
 	
 })
+//Creates the Substantive Law Controller
 .controller('subLawCtrl', function ($scope,$http) {
+    //defines all of the variables in the current scope
     $scope.current =
     { procedure: null, lawType: null };
     
-
+    //Creates the Meta Data-Model (DOM)
+    //defines the variables for the procedural drop down and law type drop down menu
     $scope.meta =
     {
+        //creates the first drop down menu line items
         proceduralList:
         [
             {
                 id: 1,
                 name: 'Statutes', 
+                //creates the second drop down menu line items
                 lawTypeList:
                 [
                     {
@@ -103,28 +108,29 @@ angular.module('starter.controllers', [])
                         name: 'Domestic Relations' 
                     },
                     {   id: 3,
-                        name: 'Court Rules' 
+                        name: 'Criminal Procedures Laws and Rules' 
                     }
                 ]
             },
             {
                 id: 2,
-                name: 'Case Law', 
+                name: 'Case Law',
+                //creates the second drop down menu line items 
                 lawTypeList:
                 [
                     {
                         id: 1,
-                        name: 'Custody'
+                        name: 'Family Law'
                     },
                     {
                         id: 2,
-                        name: 'Visitation'
+                        name: 'Matrimonial Law'
                     }
                 ]
             }
         ]
     };
-	
+	//creates the http get request from the PHP URL identified
 	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_CaseLaw_Custody.php")
     .success(function (response) {$scope.CaseLaw_Custody = response;  });
 	
@@ -155,15 +161,16 @@ angular.module('starter.controllers', [])
         }
     }
 })
-
+//Creates the Stipulation Language Controller 
 .controller('stipLangCtrl', function ($scope) {
-
+    //Creates the Check Directory DOM
     $scope.checkDirectory =
         {
-            
+            //Defines the checklist title and list components
             checkList:
                 [
                     {
+                        //Lists all of the checklist items under the grounds title
                         id: 1,
                         title: 'Grounds',
                         list: 'Resolved in whose favor?',
@@ -171,6 +178,7 @@ angular.module('starter.controllers', [])
                         list2: 'Standard is no-fault grounds'
                     },
                     {
+                        //Lists all of the checklist items under the Marital Residence title
                         id: 2,
                         title: 'Marital Residence',
                         list: 'Who will remain in home?',
@@ -213,8 +221,9 @@ angular.module('starter.controllers', [])
         }
     }
 })
-
+//Creates the Court House Controller 
 .controller('courtHouseCtrl', function ($scope) {
+    //defines all of the variables in the current scope
     $scope.current =
     {
         court: null,
@@ -222,14 +231,18 @@ angular.module('starter.controllers', [])
         judge: null
     };
 
-
+    //Creates the Meta DOM 
+    //Defines the CourtList variable off of the Meta DOM
     $scope.meta =
     {
+        //Defines the courtList title and list components
         courtList:
         [
-            {
+            {   
+                //creates the first ID drop down menu item
                 id: 1,
                 name: 'Family Court',
+                //creates the boroughList drop down menu off of the first ID selected in the first dropdown menu
                 boroughList:
                 [
                     {
@@ -255,8 +268,10 @@ angular.module('starter.controllers', [])
                 ]
             },
             {
+                //creates the second ID drop down menu item
                 id: 2,
                 name: 'Supreme Court Civil',
+                //creates the boroughList drop down menu off of the second ID selected in the second dropdown menu
                 boroughList:
                 [
                     {
@@ -282,8 +297,10 @@ angular.module('starter.controllers', [])
                 ]
             },
             {
+                //creates the third ID drop down menu item
                 id: 3,
                 name: 'Supreme Court Criminal',
+                //creates the boroughList drop down menu off of the third ID selected in the third dropdown menu
                 boroughList:
                 [
                     {
@@ -338,9 +355,11 @@ angular.module('starter.controllers', [])
             $scope.activeTabs.push(tab);
         }
     }
-
+    //Creates the Judge Directory Head DOM 
+    //Defines the judgeListHead variable off of the Judge Directory Head DOM
     $scope.judgeDirectoryHead =
         {
+            //creates the judge list variable headers
             judgeListHead:
                 [
                     {
@@ -352,10 +371,10 @@ angular.module('starter.controllers', [])
                 ]
 
         };
-
+    //Creates the Judge Directory DOM
     $scope.judgeDirectory =
         {
-            
+            //Defines judge list people
             judgeList:
                 [
                     {

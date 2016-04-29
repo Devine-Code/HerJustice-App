@@ -7,18 +7,15 @@
                 <div>
                      <b>Court Type:</b> 
                          <select ng-options="court as court.name for court in meta.courtList track by court.id" ng-model="current.court"></select> 
-                 </div>
-                 <br />
-         <!-- Initating Borough Drop Dowm -->     
-                 <div ng-if="current.court">               
-                     <div>
-                      <b>Borough: </b> 
-                         <select ng-options="borough as borough.name for borough in current.court.boroughList track by borough.id" ng-model="current.borough"></select>
-                     </div>  
                 </div>
-                 <br />
-        
-        <!--Initating Manhattan - Supreme Court Accordion-->
+                <br>
+        <!-- Initating Borough Drop Dowm -->     
+                <div ng-if="current.court">               
+                  <b>Borough: </b> 
+                     <select ng-options="borough as borough.name for borough in current.court.boroughList track by borough.id" ng-model="current.borough"></select>
+                </div>
+                <br>
+        <!--Initating Family Court - Manhattan Accordion-->
               <div ng-if="current.borough.id==1"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
@@ -98,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Manhattan - Family Court Accordion-->
+        <!--Initating Supreme Court Civil - Manhattan Accordion-->
               <div ng-if="current.borough.id==1"> 
                     <div ng-if="current.court.id==2">                    
                         <div class="accordion__container">
@@ -159,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Manhattan - Integrated Domestic Violence Accordion-->
+        <!--Initating Supreme Court Criminal - Manhattan Accordion-->
               <div ng-if="current.borough.id==1"> 
                     <div ng-if="current.court.id==3">                    
                         <div class="accordion__container">
@@ -215,7 +212,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Brooklyn - Supreme Court Accordion-->
+        <!--Initating Family Court - Brooklyn Accordion-->
               <div ng-if="current.borough.id==2"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
@@ -271,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Brooklyn - Family Court Accordion-->
+        <!--Initating Supreme Court Civil - Brooklyn Accordion-->
               <div ng-if="current.borough.id==2"> 
                     <div ng-if="current.court.id==2">                    
                         <div class="accordion__container">
@@ -384,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Queens - Supreme Court Accordion-->
+        <!--Initating Family Court - Queens Accordion-->
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
@@ -440,7 +437,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Queens - Family Court Accordion-->
+        <!--Initating Supreme Court Civil - Queens Accordion-->
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==2">                    
                         <div class="accordion__container">
@@ -496,7 +493,7 @@
                         </div>
                     </div>
                 </div> 
-        <!--Initating Queens - Integrated Domestic Violence Accordion-->
+        <!--Initating Supreme Court Criminal - Queens Accordion-->
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==3">                    
                         <div class="accordion__container">
@@ -552,7 +549,7 @@
                         </div>
                     </div>
                 </div>     
-        <!--Initating Bronx - Supreme Court Accordion-->
+        <!--Initating Family Court - Bronx Accordion-->
               <div ng-if="current.borough.id==4"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
@@ -608,7 +605,7 @@
                         </div>
                     </div>
                 </div>    
-        <!--Initating Bronx - Family Court Accordion-->
+        <!--Initating Supreme Court Civil - Bronx Accordion-->
               <div ng-if="current.borough.id==4"> 
                     <div ng-if="current.court.id==2">                    
                         <div class="accordion__container">
@@ -664,7 +661,7 @@
                         </div>
                     </div>
                 </div>    
-        <!--Initating Bronx - Integrated Domestic Violence Accordion-->
+        <!--Initating Supreme Court Crimiinal - Bronx Accordion-->
               <div ng-if="current.borough.id==4"> 
                     <div ng-if="current.court.id==3">                    
                         <div class="accordion__container">
@@ -720,7 +717,7 @@
                         </div>
                     </div>
                 </div>    
-        <!--Initating Staten Island - Supreme Court Accordion-->
+        <!--Initating Family Court - Staten Island Accordion-->
               <div ng-if="current.borough.id==5"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
@@ -776,7 +773,7 @@
                         </div>
                     </div>
                 </div>
-        <!--Initating Staten Island - Family Court Accordion-->
+        <!--Initating Supreme Court Civil - Staten Island Accordion-->
               <div ng-if="current.borough.id==5"> 
                     <div ng-if="current.court.id==2">                    
                         <div class="accordion__container">
@@ -832,7 +829,7 @@
                         </div>
                     </div>
                 </div>            
-        <!--Initating Staten Island - Integrated Domestic Violence Accordion-->
+        <!--Initating Supreme Court Criminal - Staten Island Accordion-->
               <div ng-if="current.borough.id==5"> 
                     <div ng-if="current.court.id==3">                    
                         <div class="accordion__container">
