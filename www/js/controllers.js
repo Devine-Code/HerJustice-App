@@ -68,6 +68,15 @@ angular.module('starter.controllers', [])
         }
     }
 })
+.controller('contact',function($scope,$http,$window){
+    $http.get("http://hjapps.herjustice.org/Query/ContactInformation.php")
+    .success(function (response) {$scope.contactInformation = response;  });
+	
+	$scope.sendMail = function(emailId){
+		$window.open("mailto:"+ emailId,"_system");
+	};
+	
+})
 .controller('subLawCtrl', function ($scope) {
     $scope.current =
     { procedure: null, lawType: null };
