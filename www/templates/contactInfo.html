@@ -7,12 +7,12 @@
 						
         <ion-item class="item-button-right"> {{contactInfo.Name}} <br> {{contactInfo.position}}
             <div class="buttons">
-                <a class="button button-assertive" ng-href="mailto:jdecarli@herjustice.org">
+                <a class="button button-assertive" ng-click=sendMail(contactInfo.Email)>
                     <i class="icon ion-email"></i>
                 </a>
-                <a class="button button-assertive" ng-href="tel:+1-212-349-6457">
+                <div class="button button-assertive" ng-click=callPerson(contactInfo.Phone)>
                     <i class="icon ion-ios-telephone-outline"></i>
-                </a>
+                </div>
             </div>
         </ion-item>
        

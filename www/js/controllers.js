@@ -75,6 +75,9 @@ angular.module('starter.controllers', [])
 	$scope.sendMail = function(emailId){
 		$window.open("mailto:"+ emailId,"_system");
 	};
+    $scope.callPerson = function(phoneNum) {
+        $window.open('tel:' + phoneNum, '_system', 'location=yes');
+    }
 	
 })
 .controller('subLawCtrl', function ($scope,$http) {
@@ -426,25 +429,37 @@ angular.module('starter.controllers', [])
 .controller('businessDaysCtrl', function($scope) {
     $scope.submit = function() {
         $scope.show = true;
-        // daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31 ,30, 31, 30, 31]
-        var date = new Date()
-        var today = new Date();
-        var todayDate = today.toISOString().substring(0, 10)
-        // var month = date.getMonth()
-        // var day = date.getDate()
-        // var year = date.getYear()
-        // var dayOfWeek = date.getDay()
-        // var daysAway = $scope.businessDaysNum
 
-        // while (daysAway != 0) {
-        //     if (dayOfWeek != 0 && dayOfWeek != 6) {
-        //         day ++;
-        //         dayOfWeek ++; 
-        //         dayOfWeek = (dayOfWeek % 7);
-        //         daysAway --;
-        //     }
+        var startingDate = new Date()
+        var daysToAdjust = $scope.businessDaysNum
+        var newDate = new Date(startingDate.valueOf()),
+            businessDaysLeft,
+            isWeekend,
+            direction;
 
-        // }
+        // Timezones are scary, let's work with whole-days only
+        if (daysToAdjust !== parseInt(daysToAdjust, 10)) {
+            throw new TypeError('addBusinessDays can only adjust by whole days');
+        }
+
+        // short-circuit no work; make direction assignment simpler
+        if (daysToAdjust === 0) {
+            return startingDate;
+        }
+        direction = daysToAdjust > 0 ? 1 : -1;
+
+        // Move the date in the correct direction
+        // but only count business days toward movement
+        businessDaysLeft = Math.abs(daysToAdjust);
+        while (businessDaysLeft) {
+            newDate.setDate(newDate.getDate() + direction);
+            isWeekend = newDate.getDay() in {0: 'Sunday', 6: 'Saturday'};
+            if (!isWeekend) {
+                businessDaysLeft--;
+            }
+        }
+        $scope.output = newDate.toISOString().substring(0, 10);
+
         //var moment = require('moment-business-days')
         //var july4th = '07-04';
         // var laborDay = '09-07';
@@ -456,7 +471,7 @@ angular.module('starter.controllers', [])
         // var today = new Date();
         // var todayDate = today.toISOString().substring(0, 10)
         // moment(todayDate , 'YYYY-MM-DD').businessAdd(3)._d
-        $scope.output = todayDate
+        //$scope.output =  month + "-" + day + "-" + year
     }
 
 });
