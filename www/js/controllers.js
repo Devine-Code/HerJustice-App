@@ -195,37 +195,10 @@ angular.module('starter.controllers', [])
     }
 })
 //Creates the Stipulation Language Controller 
-.controller('stipLangCtrl', function ($scope) {
-    //Creates the Check Directory DOM
-    $scope.checkDirectory =
-        {
-            //Defines the checklist title and list components
-            checkList:
-                [
-                    {
-                        //Lists all of the checklist items under the grounds title
-                        id: 1,
-                        title: 'Grounds',
-                        list: 'Resolved in whose favor?',
-                        list1: 'Party not taking divorce withdraws complaint or answer/counterclaim?',
-                        list2: 'Standard is no-fault grounds'
-                    },
-                    {
-                        //Lists all of the checklist items under the Marital Residence title
-                        id: 2,
-                        title: 'Marital Residence',
-                        list: 'Who will remain in home?',
-                        list1: 'Who will make mortgage payments?',
-                        list2: 'Who will pay real estate taxes?',
-                        list3: 'Who is entitled to tax deductions arising from mortgage/real estate tax payments?',
-                        list4: 'When is title to be transferred (e.g., when mortgage fully paid)?',
-                        list5: 'Foreclosure issues',
-                        list6: 'Lease adjustment necessary?',
-                        list7: 'Responsibility for condo/coop maintenance'
-                    }
-                ]
-        };
-
+.controller('stipLangCtrl', function ($scope,$http) {
+	
+	$http.get("http://hjapps.herjustice.org/Query/GSN_Checklist.php")
+    .success(function (response) {$scope.checkDirectory = response;  });    
 
     // initiate an array to hold all active tabs
     $scope.activeTabs = [];

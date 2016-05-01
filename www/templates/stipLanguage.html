@@ -80,19 +80,16 @@
                         </div>
                         <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
                         <!--Create checkbox for checklist -->
-                            <ul style="list-style-type:none" ng-repeat="x in checkDirectory.checkList | orderBy: 'title'">
-                                <li><u>{{ x.title }}</u></li>
-                                <li ng-if="x.list"><input type="checkbox" value={{x.id}}> {{ x.list }}</li>
-                                <li ng-if="x.list1"><input type="checkbox" value={{x.id}}> {{ x.list1 }}</li>
-                                <li ng-if="x.list2"><input type="checkbox" value={{x.id}}> {{ x.list2 }}</li>
-                                <li ng-if="x.list3"><input type="checkbox" value={{x.id}}> {{ x.list3 }}</li>
-                                <li ng-if="x.list4"><input type="checkbox" value={{x.id}}> {{ x.list4 }}</li>
-                                <li ng-if="x.list5"><input type="checkbox" value={{x.id}}> {{ x.list5 }}</li>
-                                <li ng-if="x.list6"><input type="checkbox" value={{x.id}}> {{ x.list6 }}</li>
-                                <li ng-if="x.list7"><input type="checkbox" value={{x.id}}> {{ x.list7 }}</li>
-                                <Br>
+						
+                            <ul style="list-style-type:none" ng-repeat="x in checkDirectory" ng-controller="stipLangCtrl">
+								<!-- below if condition compares the type t previos element sso it print only once for each type-->
+								<li ng-if="x.Type!=checkDirectory[$index-1].Type"><div ng-if="$index!=0"></br></div><u><strong>{{ x.Type }}</strong></u></li>
+                                <li ng-if="x.Title"><input type="checkbox" value={{x.Id}}> {{ x.Title }}</li>
+								 
+                              
                             </ul>
-                        </div>
+                       
+						</div>
                     </div>
                 <!-- Acknowledgement Language Tab-->
                     <div class="accordion__tab">
