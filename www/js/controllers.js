@@ -228,7 +228,7 @@ angular.module('starter.controllers', [])
     }
 })
 //Creates the Court House Controller 
-.controller('courtHouseCtrl', function ($scope) {
+.controller('courtHouseCtrl', function ($scope,$http,$window) {
     //defines all of the variables in the current scope
     $scope.current =
     {
@@ -334,7 +334,29 @@ angular.module('starter.controllers', [])
         ]
     };
 
-
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_Manhattan.php")
+    .success(function (response) {$scope.family_manhattan = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_Brooklyn.php")
+    .success(function (response) {$scope.family_brooklyn = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_Queens.php")
+    .success(function (response) {$scope.family_queens = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_Bronx.php")
+    .success(function (response) {$scope.family_bronx = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_StatenIsland.php")
+    .success(function (response) {$scope.family_statenIsland = response;  });
+	
+	
+	$scope.elementSplit=function(element){
+		return element.split("-");
+	}
+	$scope.useUrl = function(url){
+		
+		$window.open(url, '_system');
+	}
     // initiate an array to hold all active tabs
     $scope.activeTabs = [];
 

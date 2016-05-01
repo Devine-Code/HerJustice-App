@@ -19,49 +19,44 @@
               <div ng-if="current.borough.id==1"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
+						<div ng-controller="courtHouseCtrl">
+						<div ng-repeat="family_court in family_manhattan" ng-controller="courtHouseCtrl">
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><b>Administrative Judge</b> <br /> Hon. Peter H. Moulton <br /> <br />
-                                        <u>Main Facility:</u> <br />
-                                        New York County Courthouse <br />
-                                        60 Centre Street<br />
-                                        New York, N.Y. 10007 <br />
-                                        646-386-3600
-                                        <br /> <br />
-                                        <u>Satellite Facilities:</u> <br />
-                                        80 & 111 Centre Street <br />
-                                        New York, N.Y. 10013 <br />
-                                        646-386-3685 (80 Centre)<br />
-                                        71 Thomas Street<br />
-                                        New York, N.Y. 10013 <br />
-                                        646-386-3770<br /> <br />
- 
- 
-                                        <u>Hours:</u> <br />
-                                        Courthouse Hours: 9 AM to 5 PM <br />
-                                        County Clerk Record Room (60 Centre, Rm. 103): 9 AM - 3 PM <br />
-                                        County Clerk Archives (31 Chambers, 7th Fl.): 9 AM - 4:30 PM <br />
-                                        Passports (60 Centre, Rm. 160): Tues. & Thurs., 9 AM - 2 PM
-                                        <br />
-                                        <br />
-                                        <a href="#" onclick="window.open('http://www.courts.state.ny.us/courts/1jd/supctmanh/', '_system');">Supreme Court, Civil Branch, New York County</a>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
+								<strong>{{family_court.Name}}</strong> 
+								</br>{{family_court.Address}}
+								</br>{{family_court.City}}
+								</br>{{family_court.State}}
+								</br>{{family_court.Zipcode}}
+								{{family_court.Contact_info}}
+								</br>
+								
+								</br>{{family_court.Address_Note}}
+								</br>
+								</br><strong>Hours: </strong></br>{{family_court.Hours}}     
                                 </div>
+								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Safe Room Info</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">{{family_court.Safe_room_info}}
+							
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
                                     <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Room Numbers Info</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
+									<a href="#" ng-click=useUrl(family_court.PartOrRoomInfo) >{{family_court.PartOrRoomInfo}}</a>
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -69,19 +64,7 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">
-                                    <table>
-                                      <tr ng-repeat="x in judgeDirectoryHead.judgeListHead">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    
-                                      <tr ng-repeat="x in judgeDirectory.judgeList | orderBy: 'name'">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    </table>	
+                                    	<a href="#" ng-click=useUrl(family_court.Judge_dir) >{{family_court.Judge_dir}}</a>
                                 </div>
                             </div>
                             <!-- .accordion__tab -->
@@ -89,10 +72,12 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{family_court.Procedural_info}}</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
+						</div>
+					</div>
                     </div>
                 </div>
         <!--Initating Supreme Court Civil - Manhattan Accordion-->
@@ -216,25 +201,43 @@
               <div ng-if="current.borough.id==2"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
+						<div ng-controller="courtHouseCtrl">
+						<div ng-repeat="family_court in family_brooklyn" ng-controller="courtHouseCtrl">
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><strong>Supervising Judge</strong></br>Hon. Carol Sherman</br></br><strong>Clerk of Court</strong></bR>Michael J. Williams</br></br><strong>The Bronx County Family Court is located at:</strong></br> 900 Sheridan Ave,</br> Bronx, </br> NY 10451</br>(corner of 161 Street)</br>Phone: 718­618­2098 </br>Fax: 718­590­7875 </br>Email: bronxfamilycourt@nycourts.gov</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">
+								<strong>{{family_court.Name}}</strong> 
+								</br>{{family_court.Address}}
+								</br>{{family_court.City}}
+								</br>{{family_court.State}}
+								</br>{{family_court.Zipcode}}
+								{{family_court.Contact_info}}
+								</br>
+								
+								</br>{{family_court.Address_Note}}
+								</br>
+				
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
+									<a href="#" ng-click=useUrl(family_court.Safe_room_info) >{{family_court.Safe_room_info}}</a>
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
                                     <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
+									<a href="#" ng-click=useUrl(family_court.PartOrRoomInfo) >{{family_court.PartOrRoomInfo}}</a>
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -242,19 +245,7 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">
-                                    <table>
-                                      <tr ng-repeat="x in judgeDirectoryHead.judgeListHead">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    
-                                      <tr ng-repeat="x in judgeDirectory.judgeList | orderBy: 'name'">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    </table>
+                                    {{family_court.Judge_dir}}
                                 </div>
                             </div>
                             <!-- .accordion__tab -->
@@ -262,9 +253,14 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Proceedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+								{{family_court.Procedural_info}}
+								
+								</div>
                             </div>
                             <!-- .accordion__tab -->
+							</div>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -385,45 +381,51 @@
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
-                                    <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
-                                    <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
+                            <div ng-controller="courtHouseCtrl">
+								<div ng-repeat="family_court in family_queens" ng-controller="courtHouseCtrl">
+									<div class="accordion__tab">
+										<div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
+										</div>
+										<div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">
+											<strong>{{family_court.Name}}</strong> 
+											</br>{{family_court.Address}}
+											</br>{{family_court.City}}
+											</br>{{family_court.State}}
+											</br>{{family_court.Zipcode}}
+											{{family_court.Contact_info}}
+											</br>
+								
+											</br>{{family_court.Address_Note}}
+											</br>
+				
+										</div>
+									</div>
+									<!-- .accordion__tab -->
+									<div class="accordion__tab">
+										<div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
+										</div>
+									<div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
+										<a href="#" ng-click=useUrl(family_court.Safe_room_info) >{{family_court.Safe_room_info}}</a>
+									</div>
+									</div>
+									<!-- .accordion__tab -->
+									<div class="accordion__tab">
+										<div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
+											<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
+										</div>
+										<div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
+											<a href="#" ng-click=useUrl(family_court.PartOrRoomInfo) >{{family_court.PartOrRoomInfo}}</a>
+										</div>
+									</div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab four')">Judge Directory
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">
-                                    <table>
-                                      <tr ng-repeat="x in judgeDirectoryHead.judgeListHead">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    
-                                      <tr ng-repeat="x in judgeDirectory.judgeList | orderBy: 'name'">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    </table>
+                                    <a href="#" ng-click=useUrl(family_court.Judge_dir) >{{family_court.Judge_dir}}</a>
                                 </div>
                             </div>
                             <!-- .accordion__tab -->
@@ -431,12 +433,17 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Proceedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+								{{family_court.Procedural_info}}
+								
+								</div>
                             </div>
                             <!-- .accordion__tab -->
-                        </div>
+							</div>
+						</div>
                     </div>
                 </div>
+			</div>
         <!--Initating Supreme Court Civil - Queens Accordion-->
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==2">                    
@@ -553,25 +560,44 @@
               <div ng-if="current.borough.id==4"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
+						<div ng-controller="courtHouseCtrl">
+						<div ng-repeat="family_court in family_bronx" ng-controller="courtHouseCtrl">
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
+								<strong>{{family_court.Name}}</strong> 
+								</br>{{family_court.Address}}
+								</br>{{family_court.City}}
+								</br>{{family_court.State}}
+								</br>{{family_court.Zipcode}}
+								{{family_court.Contact_info}}
+								</br>
+								
+								</br>{{family_court.Address_Note}}
+								</br>
+								 
+                                </div>
+								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">{{family_court.Safe_room_info}}
+							
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
                                     <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
+									<a href="#" ng-click=useUrl(family_court.PartOrRoomInfo) >{{family_court.PartOrRoomInfo}}</a>
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -579,32 +605,22 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">
-                                    <table>
-                                      <tr ng-repeat="x in judgeDirectoryHead.judgeListHead">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    
-                                      <tr ng-repeat="x in judgeDirectory.judgeList | orderBy: 'name'">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    </table>
+                                    	<a href="#" ng-click=useUrl(family_court.Judge_dir) >{{family_court.Judge_dir}}</a>
                                 </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Proceedural Information
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{family_court.Procedural_info}}</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
+						</div>
+					</div>
                     </div>
-                </div>    
+                </div>
         <!--Initating Supreme Court Civil - Bronx Accordion-->
               <div ng-if="current.borough.id==4"> 
                     <div ng-if="current.court.id==2">                    
@@ -721,25 +737,44 @@
               <div ng-if="current.borough.id==5"> 
                     <div ng-if="current.court.id==1">                    
                         <div class="accordion__container">
+						<div ng-controller="courtHouseCtrl">
+						<div ng-repeat="family_court in family_statenIsland" ng-controller="courtHouseCtrl">
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Address
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
+								<strong>{{family_court.Name}}</strong> 
+								</br>{{family_court.Address}}
+								</br>{{family_court.City}}
+								</br>{{family_court.State}}
+								</br>{{family_court.Zipcode}}
+								{{family_court.Contact_info}}
+								</br>
+								
+								</br>{{family_court.Address_Note}}
+								</br>
+								 
+                                </div>
+								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">{{family_court.Safe_room_info}}
+							
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Room Numbers
                                     <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
+									<a href="#" ng-click=useUrl(family_court.PartOrRoomInfo) >{{family_court.PartOrRoomInfo}}</a>
+								</div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -747,30 +782,20 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab four'), 'ion-chevron-right': !isOpenTab('tab four')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab four')">
-                                    <table>
-                                      <tr ng-repeat="x in judgeDirectoryHead.judgeListHead">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    
-                                      <tr ng-repeat="x in judgeDirectory.judgeList | orderBy: 'name'">
-                                        <td>{{ x.name }}</td>
-                                        <td>{{ x.room }}</td>
-                                        <td>{{ x.phone }}</td>
-                                      </tr>
-                                    </table>
+                                    	<a href="#" ng-click=useUrl(family_court.Judge_dir) >{{family_court.Judge_dir}}</a>
                                 </div>
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Proceedural Information
+                                <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">Article 3 content goes here!</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{family_court.Procedural_info}}</div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
+						</div>
+					</div>
                     </div>
                 </div>
         <!--Initating Supreme Court Civil - Staten Island Accordion-->
