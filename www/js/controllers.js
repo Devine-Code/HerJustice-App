@@ -43,6 +43,7 @@ angular.module('starter.controllers', [])
     };
 })
 
+//creates FAQ controller
 .controller('FAQCtrl', function($scope,$window) {
     $scope.courts = [
       { title: 'General Family Court', id: 1 },
@@ -50,14 +51,17 @@ angular.module('starter.controllers', [])
     ];
     $scope.courtSelected = $scope.courts[0];  
 })
+
+//controllerto print the question and answer
 .controller('courtFAQ',function($scope,$http){
+	//to get the php scripts for contact info
     $http.get("http://hjapps.herjustice.org/Query/FAQ_CustodyAndVisitation.php")
     .success(function (response) {$scope.custody = response;  });
 	
 	$http.get("http://hjapps.herjustice.org/Query/FAQ_FamilyCourt.php")
     .success(function (response) {$scope.family = response;  });
     
-    
+    //function to collapse and expand question ans answer
     $scope.show = false;
     $scope.toggleTab=function()
     {
@@ -68,20 +72,25 @@ angular.module('starter.controllers', [])
         }
     }
 })
+
+//creates contact info controller
 .controller('contact',function($scope,$http,$window){
     $http.get("http://hjapps.herjustice.org/Query/ContactInformation.php")
     .success(function (response) {$scope.contactInformation = response;  });
 	
+	//function to send email
 	$scope.sendMail = function(emailId){
 		$window.open("mailto:"+ emailId,"_system");
 	};
+	
+	//function to open phone app in phone when user clicks phone symbol on contact info page
     $scope.callPerson = function(phoneNum) {
         $window.open('tel:' + phoneNum, '_system', 'location=yes');
     }
 	
 })
 //Creates the Substantive Law Controller
-.controller('subLawCtrl', function ($scope,$http) {
+.controller('subLawCtrl', function ($scope,$http,$window) {
     //defines all of the variables in the current scope
     $scope.current =
     { procedure: null, lawType: null };
@@ -109,6 +118,9 @@ angular.module('starter.controllers', [])
                     },
                     {   id: 3,
                         name: 'Criminal Procedures Laws and Rules' 
+                    },
+					{   id: 4,
+                        name: 'Civil Practice Laws and Rules' 
                     }
                 ]
             },
@@ -130,7 +142,28 @@ angular.module('starter.controllers', [])
             }
         ]
     };
+	$scope.useUrl = function(url){
+		
+		$window.open(url, '_system');
+	}
 	//creates the http get request from the PHP URL identified
+	//criminal procudures
+	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_Statutes_CPL.php")
+    .success(function (response) {$scope.Statutes_CPL = response;  });
+	
+	//civil practice law
+	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_Statutes_CPLR.php")
+    .success(function (response) {$scope.Statutes_CPLR = response;  });
+	
+	//domestic relations
+	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_Statutes_DRL.php")
+    .success(function (response) {$scope.Statutes_DRL = response;  });
+	
+	//family court
+	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_Statutes_FCA.php")
+    .success(function (response) {$scope.Statutes_FCA = response;  });
+	
+	//case law custody
 	$http.get("http://hjapps.herjustice.org/Query/SubstantiveOrProceduralLaw_CaseLaw_Custody.php")
     .success(function (response) {$scope.CaseLaw_Custody = response;  });
 	

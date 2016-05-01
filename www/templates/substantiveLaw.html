@@ -23,29 +23,22 @@
               <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==1">                    
                         <div class="accordion__container">
-                            <div class="accordion__tab">
+                            <!-- .accordion__tab -->
+							<div ng-controller="subLawCtrl">
+								<div ng-repeat="family_Court in Statutes_FCA" ng-controller="subLawCtrl">
+									<div class="accordion__tab">
 
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Family Court Act 1 
-                                		<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
+										<div class="accordion__tab-title" data-ng-click="openTab(family_Court.Id)">{{family_Court.Article}}
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab(family_Court.Id), 'ion-chevron-right': !isOpenTab(family_Court.Id)}"></i>
+										</div>
 
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Family Court Act 2
-                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Family Court Act 3
-									<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+										<div class="accordion__tab-content" data-ng-show="isOpenTab(family_Court.Id)"> 
+											<a href="#" ng-click=useUrl(family_Court.Description) >{{family_Court.Description}}</a>
+										</div>
+									</div>
+                           
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -53,30 +46,22 @@
                 <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==2">                    
                         <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Domestic Relations 1
-                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"><b><h6>Valuation Date (Business and other assets)</h6></b><br />
-                                    <u>McSparron v. McSparron</u>,87 N.Y.2d 275, 639 N.Y.S.2d 265 (1995).  "Domestic Relations Law 236B(l)(c) provides that the classification of property as "marital" or separate" is governed by the date on which the matrimonial action was commenced or the parties' separation agreement executed.  However, the equitable distribution statute does not specify the date that is to be used as the touchstone for measuring the value of the marital property (citations omitted).  Thus, the appropriate date for measuring the value of marital property has been left to the sound discretion of the trial courts, which should make their determinations with due regard for all relevant facts and circumstances (citations omitted)." "In attempting to select a suitable valuation date, some courts have drawn a distinction between "active" assets (i.e., those whose value depends on the labor of a spouse) and "passive assets" (i.e., those whose value depends only on market conditions).  These courts have concluded that "active" assets should be valued only as of that date of the commencement of the action, while the valuation date for "passive" assets may be determined more flexibly (citations omitted).  Such formulations, however, may prove too rigid to be useful in particular cases.  Thus, they should be regarded only as helpful guideposts and not as immutable rules of law (citations omitted)."  See, e.g., Greenwald v. Greenwald, 164 A.D.2d 706, 505 N.Y.S.2d 494 (1st Dept. 1991).
+                            <!-- .accordion__tab -->
+							<div ng-controller="subLawCtrl">
+								<div ng-repeat="domestic_Relations in Statutes_DRL" ng-controller="subLawCtrl">
+									<div class="accordion__tab">
 
-                                </div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Domestic Relations 2
-                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Domestic Relations 3
-                                	<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+										<div class="accordion__tab-title" data-ng-click="openTab(domestic_Relations.Id)">{{domestic_Relations.Article}}
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab(domestic_Relations.Id), 'ion-chevron-right': !isOpenTab(domestic_Relations.Id)}"></i>
+										</div>
+
+										<div class="accordion__tab-content" data-ng-show="isOpenTab(domestic_Relations.Id)">
+											<a href="#" ng-click=useUrl(domestic_Relations.Description) >{{domestic_Relations.Description}}</a>
+										</div>
+									</div>
+                           
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -84,27 +69,49 @@
                 <div ng-if="current.procedure.id==1"> 
                     <div ng-if="current.lawType.id==3">                    
                         <div class="accordion__container">
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab one')">Criminal Procedures Law and Rule 1
-                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">Article 1 content goes here!</div>
-                            </div>
+                            
                             <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Criminal Procedures Law and Rule 2
-                                	<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">Article 2 content goes here!</div>
-                            </div>
+							<div ng-controller="subLawCtrl">
+								<div ng-repeat="criminal in Statutes_CPL" ng-controller="subLawCtrl">
+									<div class="accordion__tab">
+
+										<div class="accordion__tab-title" data-ng-click="openTab(criminal.Id)">{{criminal.Article}}
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab(criminal.Id), 'ion-chevron-right': !isOpenTab(criminal.Id)}"></i>
+										</div>
+
+										<div class="accordion__tab-content" data-ng-show="isOpenTab(criminal.Id)">
+											<a href="#" ng-click=useUrl(criminal.Description) >{{criminal.Description}}</a>
+										</div>
+									</div>
+                           
+								</div>
+							</div>
+                            
+                        </div>
+                    </div>
+                </div>
+		<!--Initating Statutes - Civil practice Laws and Rules Accordion-->
+				<div ng-if="current.procedure.id==1"> 
+                    <div ng-if="current.lawType.id==4">                    
+                        <div class="accordion__container">
+                            
                             <!-- .accordion__tab -->
-                            <div class="accordion__tab">
-                                <div class="accordion__tab-title" data-ng-click="openTab('tab three')">Criminal Procedures Law and Rule 3
-                                	<i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
-                                </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">Article 3 content goes here!</div>
-                            </div>
-                            <!-- .accordion__tab -->
+							<div ng-controller="subLawCtrl">
+								<div ng-repeat="civil in Statutes_CPLR" ng-controller="subLawCtrl">
+									<div class="accordion__tab">
+
+										<div class="accordion__tab-title" data-ng-click="openTab(civil.Id)">{{civil.Article}}
+											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab(civil.Id), 'ion-chevron-right': !isOpenTab(civil.Id)}"></i>
+										</div>
+
+										<div class="accordion__tab-content" data-ng-show="isOpenTab(civil.Id)">
+											<a href="#" ng-click=useUrl(civil.Description) >{{civil.Description}}</a>
+										</div>
+									</div>
+                           
+								</div>
+							</div>
+                            
                         </div>
                     </div>
                 </div>

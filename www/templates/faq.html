@@ -2,6 +2,7 @@
   <ion-content>
   <h3 style="text-align:center"> Welcome to FAQ</h3>
   </br>
+	<!--controller to show the drop down for faq page with court name-->
 	<div data-ng-controller="FAQCtrl">
 	<h4 style="text-align:center"><strong>Court Type : </strong> &nbsp;&nbsp;
 		<select ng-model="courtSelected" ng-options="court.title for court in courts">
@@ -12,7 +13,7 @@
 	
 	</h4>
 	
-	
+	<!--controller and for loop to traverse through questions for selected court-->
 	<div ng-if="courtSelected.title=='General Family Court'">
 		<div class="accordion__container">
 			<div ng-controller="courtFAQ">
