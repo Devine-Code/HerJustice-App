@@ -470,7 +470,7 @@ angular.module('starter.controllers', [])
      }
 })
 
-
+//controller to calculate maintenance 
 .controller('maintenanceCtrl', function($scope) {
     $scope.submit = function() {
         $scope.show = true;
@@ -494,12 +494,16 @@ angular.module('starter.controllers', [])
                 $scope.output = amt2
             }
         }
+        if ($scope.output < 0){
+            $scope.output = 0
+        }
 
     }
 })
 .controller('PlaylistsCtrl', function($scope) {
 
 })
+//controller to calclate business days 
 .controller('businessDaysCtrl', function($scope) {
     $scope.submit = function() {
         $scope.show = true;
@@ -511,12 +515,12 @@ angular.module('starter.controllers', [])
             isWeekend,
             direction;
 
-        // Timezones are scary, let's work with whole-days only
+        // need a whole day
         if (daysToAdjust !== parseInt(daysToAdjust, 10)) {
             throw new TypeError('addBusinessDays can only adjust by whole days');
         }
 
-        // short-circuit no work; make direction assignment simpler
+    
         if (daysToAdjust === 0) {
             return startingDate;
         }
@@ -528,6 +532,7 @@ angular.module('starter.controllers', [])
         while (businessDaysLeft) {
             newDate.setDate(newDate.getDate() + direction);
             isWeekend = newDate.getDay() in {0: 'Sunday', 6: 'Saturday'};
+            //add day if new date is not saturday or sunday
             if (!isWeekend) {
                 businessDaysLeft--;
             }
