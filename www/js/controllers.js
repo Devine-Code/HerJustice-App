@@ -305,7 +305,7 @@ angular.module('starter.controllers', [])
             {
                 //creates the third ID drop down menu item
                 id: 3,
-                name: 'Supreme Court Criminal',
+                name: 'Integrated Domestic Violence Court',
                 //creates the boroughList drop down menu off of the third ID selected in the third dropdown menu
                 boroughList:
                 [
@@ -349,10 +349,37 @@ angular.module('starter.controllers', [])
 	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_Family_StatenIsland.php")
     .success(function (response) {$scope.family_statenIsland = response;  });
 	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_SupremeCourt_Manhattan.php")
+    .success(function (response) {$scope.supreme_manhattan = response;  });
 	
-	$scope.elementSplit=function(element){
-		return element.split("-");
-	}
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_SupremeCourt_Brooklyn.php")
+    .success(function (response) {$scope.supreme_brooklyn = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_SupremeCourt_Queens.php")
+    .success(function (response) {$scope.supreme_queens = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_SupremeCourt_Bronx.php")
+    .success(function (response) {$scope.supreme_bronx = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_SupremeCourt_StatenIsland.php")
+    .success(function (response) {$scope.supreme_statenIsland = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_IDVC_Manhattan.php")
+    .success(function (response) {$scope.domestic_manhattan = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_IDVC_Brooklyn.php")
+    .success(function (response) {$scope.domestic_brooklyn = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_IDVC_Queens.php")
+    .success(function (response) {$scope.domestic_queens = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_IDVC_Bronx.php")
+    .success(function (response) {$scope.domestic_bronx = response;  });
+	
+	$http.get("http://hjapps.herjustice.org/Query/CourtInfo_IDVC_StatenIsland.php")
+    .success(function (response) {$scope.domestic_statenIsland = response;  });
+	
+	
 	$scope.useUrl = function(url){
 		
 		$window.open(url, '_system');
