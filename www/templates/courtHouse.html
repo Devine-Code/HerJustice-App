@@ -28,10 +28,8 @@
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
 								<strong>{{family_court.Name}}</strong> 
 								</br>{{family_court.Address}}
-								</br>{{family_court.City}}
-								</br>{{family_court.State}} &nbsp;
-								{{family_court.ZIP_Code}}
-								</br>{{family_court.Contact_info}}
+								</br>{{family_court.City}},&nbsp;{{family_court.State}}&nbsp;{{family_court.ZIP_Code}}
+								</br><div ng-bind-html="family_court.Contact_info">{{family_court.Contact_info}}</div>
 								</br>
 								
 								</br>{{family_court.Address_Note}}
@@ -93,15 +91,12 @@
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
 								<strong>{{supreme_court.Name}}</strong> 
 								</br>{{supreme_court.Address}}
-								</br>{{supreme_court.City}}
-								</br>{{supreme_court.State}} &nbsp;
-								{{supreme_court.ZIP_Code}}
+								</br>{{supreme_court.City}},&nbsp;{{supreme_court.State}}&nbsp;{{supreme_court.ZIP_Code}}
 								</br>{{supreme_court.Contact_info}}
+								</br>								
+								</br><div ng-bind-html="supreme_court.Address_Note">{{supreme_court.Address_Note}}</div>
 								</br>
-								
-								</br>{{supreme_court.Address_Note}}
-								</br>
-								</br><strong>Hours: </strong></br>{{supreme_court.Hours}}     
+								</br><strong>Hours: </strong></br><div ng-bind-html="supreme_court.Hours">{{supreme_court.Hours}}</div>     
                                 </div>
 								
                             </div>
@@ -156,19 +151,14 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{domestic_court.Name}}</strong> 
-								</br>{{domestic_court.Address}}
-								</br>{{domestic_court.City}}
-								</br>{{domestic_court.State}} &nbsp;
-								{{domestic_court.ZIP_Code}}
-								</br>{{domestic_court.Contact_info}}
-								</br>
-								
-								</br>{{domestic_court.Address_Note}}
-								</br>
-								    
-                                </div>
-								
+    								<strong>{{domestic_court.Name}}</strong> 
+    								</br>{{domestic_court.Address}}
+    								</br>{{domestic_court.City}},&nbsp;{{domestic_court.State}}&nbsp;{{domestic_court.ZIP_Code}}
+    								</br>{{domestic_court.Contact_info}}
+    								</br>
+    								</br>{{domestic_court.Address_Note}}
+    								</br>
+                                </div>	
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -223,17 +213,12 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">
-								<strong>{{family_court.Name}}</strong> 
-								</br>{{family_court.Address}}
-								</br>{{family_court.City}}
-								</br>{{family_court.State}} &nbsp;
-								{{family_court.ZIP_Code}}
-								</br>{{family_court.Contact_info}}
-								</br>
-								
-								</br>{{family_court.Address_Note}}
-								</br>
-				
+    								<strong>{{family_court.Name}}</strong> 
+    								</br>{{family_court.Address}}
+    								</br>{{family_court.City}},&nbsp;{{family_court.State}}&nbsp;{{family_court.ZIP_Code}}
+    								</br><div ng-bind-html="family_court.Contact_info">{{family_court.Contact_info}}</div>
+    								</br>{{family_court.Address_Note}}
+    								</br>
 								</div>
                             </div>
                             <!-- .accordion__tab -->
@@ -242,7 +227,9 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
-									<a href="#" ng-click=useUrl(family_court.Safe_room_info) >{{family_court.Safe_room_info}}</a>
+									<a href="#" ng-click=useUrl(family_court.Safe_room_info) >
+                                        </br><div ng-bind-html="family_court.Safe_room_info">{{family_court.Safe_room_info}}</div>
+                                    </a>
 								</div>
                             </div>
                             <!-- .accordion__tab -->
@@ -269,7 +256,7 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
-								{{family_court.Procedural_info}}
+								    </br><div ng-bind-html="family_court.Procedural_info">{{family_court.Procedural_info}}</div>
 								
 								</div>
                             </div>
@@ -292,15 +279,10 @@
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
 								<strong>{{supreme_court.Name}}</strong> 
 								</br>{{supreme_court.Address}}
-								</br>{{supreme_court.City}}
-								</br>{{supreme_court.State}} &nbsp;
-								{{supreme_court.ZIP_Code}}
-								</br>{{supreme_court.Contact_info}}
-								</br>
-								
-								</br>{{supreme_court.Address_Note}}
-								</br>
-								</br><strong>Hours: </strong></br>{{supreme_court.Hours}}     
+								</br>{{supreme_court.City}},&nbsp;{{supreme_court.State}}&nbsp;{{supreme_court.ZIP_Code}}
+								</br><div ng-bind-html="supreme_court.Contact_info">{{supreme_court.Contact_info}}</div>
+								</br><div ng-bind-html="supreme_court.Address_Note">{{supreme_court.Address_Note}}</div>
+								</br><strong>Hours: </strong></br><div ng-bind-html="supreme_court.Hours">{{supreme_court.Hours}}</div>     
                                 </div>
 								
                             </div>
@@ -319,7 +301,9 @@
                                     <i class="pull-right" ng-class="{'ion-chevron-down': isOpenTab('tab three'), 'ion-chevron-right': !isOpenTab('tab three')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab three')">
-									<a href="#" ng-click=useUrl(supreme_court.PartOrRoomInfo) >{{supreme_court.PartOrRoomInfo}}</a>
+									<a href="#" ng-click=useUrl(supreme_court.PartOrRoomInfo) >
+                                        </br><div ng-bind-html="supreme_court.PartOrRoomInfo">{{supreme_court.PartOrRoomInfo}}</div>
+                                    </a>
 								</div>
                             </div>
                             <!-- .accordion__tab -->
@@ -336,7 +320,9 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{supreme_court.Procedural_info}}</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+                                    <div ng-bind-html="supreme_court.Procedural_info">{{supreme_court.Procedural_info}}</div>
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
@@ -355,19 +341,12 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{domestic_court.Name}}</strong> 
-								</br>{{domestic_court.Address}}
-								</br>{{domestic_court.City}}
-								</br>{{domestic_court.State}} &nbsp;
-								{{domestic_court.ZIP_Code}}
-								</br>{{domestic_court.Contact_info}}
-								</br>
-								
-								</br>{{domestic_court.Address_Note}}
-								</br>
-								    
+    								<strong><div ng-bind-html="domestic_court.Name">{{domestic_court.Name}}</div></strong> 
+    								{{domestic_court.Address}}
+    								</br>{{domestic_court.City}},&nbsp;{{domestic_court.State}}&nbsp;{{domestic_court.ZIP_Code}}
+    								</br>{{domestic_court.Contact_info}}								
+    								</br>{{domestic_court.Address_Note}}
                                 </div>
-								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -424,15 +403,9 @@
 										<div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')">
 											<strong>{{family_court.Name}}</strong> 
 											</br>{{family_court.Address}}
-											</br>{{family_court.City}}
-											</br>{{family_court.State}} &nbsp;
-											{{family_court.ZIP_Code}}
-											</br>{{family_court.Contact_info}}
-											</br>
-								
+											</br>{{family_court.City}},&nbsp;{{family_court.State}} &nbsp;{{family_court.ZIP_Code}}
+											</br><div ng-bind-html="family_court.Contact_info">{{family_court.Contact_info}}</div>
 											</br>{{family_court.Address_Note}}
-											</br>
-				
 										</div>
 									</div>
 									<!-- .accordion__tab -->
@@ -441,7 +414,9 @@
 											<i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
 										</div>
 									<div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
-										<a href="#" ng-click=useUrl(family_court.Safe_room_info) >{{family_court.Safe_room_info}}</a>
+										<a href="#" ng-click=useUrl(family_court.Safe_room_info) >
+                                            <div ng-bind-html="family_court.Safe_room_info">{{family_court.Safe_room_info}}</div>
+                                        </a>
 									</div>
 									</div>
 									<!-- .accordion__tab -->
@@ -477,7 +452,6 @@
 						</div>
                     </div>
                 </div>
-			</div>
         <!--Initating Supreme Court Civil - Queens Accordion-->
               <div ng-if="current.borough.id==3"> 
                     <div ng-if="current.court.id==2">                    
@@ -489,19 +463,12 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{supreme_court.Name}}</strong> 
-								</br>{{supreme_court.Address}}
-								</br>{{supreme_court.City}}
-								</br>{{supreme_court.State}} &nbsp;
-								{{supreme_court.ZIP_Code}}
-								</br>{{supreme_court.Contact_info}}
-								</br>
-								
-								</br>{{supreme_court.Address_Note}}
-								</br>
-								 
+    								<strong>{{supreme_court.Name}}</strong> 
+    								</br>{{supreme_court.Address}}
+    								</br>{{supreme_court.City}},&nbsp;{{supreme_court.State}}&nbsp;{{supreme_court.ZIP_Code}}
+    								</br>{{supreme_court.Contact_info}}
+    								</br><div ng-bind-html="supreme_court.Address_Note">{{supreme_court.Address_Note}}</div> 
                                 </div>
-								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -535,7 +502,9 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{supreme_court.Procedural_info}}</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+                                    <a><div ng-bind-html="supreme_court.Procedural_info">{{supreme_court.Procedural_info}}</div></a>
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
@@ -554,17 +523,11 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{domestic_court.Name}}</strong> 
-								</br>{{domestic_court.Address}}
-								</br>{{domestic_court.City}}
-								</br>{{domestic_court.State}} &nbsp;
-								{{domestic_court.ZIP_Code}}
-								</br>{{domestic_court.Contact_info}}
-								</br>
-								
-								</br>{{domestic_court.Address_Note}}
-								</br>
-								   
+    								<strong><div ng-bind-html="domestic_court.Name">{{domestic_court.Name}}</div></strong> 
+                                    {{domestic_court.Address}}
+    								</br>{{domestic_court.City}},&nbsp;{{domestic_court.State}} &nbsp;{{domestic_court.ZIP_Code}}
+    								</br>{{domestic_court.Contact_info}}
+    								</br>{{domestic_court.Address_Note}}
                                 </div>
 								
                             </div>
@@ -621,27 +584,20 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{family_court.Name}}</strong> 
-								</br>{{family_court.Address}}
-								</br>{{family_court.City}}
-								</br>{{family_court.State}} &nbsp;
-								{{family_court.ZIP_Code}} 
-								</br>{{family_court.Contact_info}}
-								</br>
-								
-								</br>{{family_court.Address_Note}}
-								</br>
-								 
-                                </div>
-								
+    								<strong>{{family_court.Name}}</strong> 
+    								</br>{{family_court.Address}}
+    								</br>{{family_court.City}}&nbsp;{{family_court.State}} &nbsp;{{family_court.ZIP_Code}} 
+    								</br><div ng-bind-html="family_court.Contact_info">{{family_court.Contact_info}}</div>
+    								</br>{{family_court.Address_Note}}
+                                </div>	
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">{{family_court.Safe_room_info}}
-							
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
+                                    <div ng-bind-html="family_court.Safe_room_info">{{family_court.Safe_room_info}}</div>
 								</div>
                             </div>
                             <!-- .accordion__tab -->
@@ -686,19 +642,13 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{supreme_court.Name}}</strong> 
-								</br>{{supreme_court.Address}}
-								</br>{{supreme_court.City}}
-								</br>{{supreme_court.State}} &nbsp;
-								{{supreme_court.ZIP_Code}}
-								</br>{{supreme_court.Contact_info}}
-								</br>
-								
-								</br>{{supreme_court.Address_Note}}
-								</br>
-								</br><strong>Hours: </strong></br>{{supreme_court.Hours}}     
-                                </div>
-								
+    								<strong>{{supreme_court.Name}}</strong> 
+    								</br>{{supreme_court.Address}}
+    								</br>{{supreme_court.City}},&nbsp;{{supreme_court.State}} &nbsp; {{supreme_court.ZIP_Code}}
+    								</br><div ng-bind-html="supreme_court.Contact_info">{{supreme_court.Contact_info}}</div>
+    								</br><div ng-bind-html="supreme_court.Address_Note">{{supreme_court.Address_Note}}</div>
+    								</br><strong>Hours: </strong></br><div ng-bind-html="supreme_court.Hours">{{supreme_court.Hours}}</div>     
+                                </div>	
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
@@ -732,7 +682,9 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{supreme_court.Procedural_info}}</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+                                    <div ng-bind-html="supreme_court.Procedural_info">{{supreme_court.Procedural_info}}</div>
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
@@ -753,15 +705,10 @@
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
 								<strong>{{domestic_court.Name}}</strong> 
 								</br>{{domestic_court.Address}}
-								</br>{{domestic_court.City}}
-								</br>{{domestic_court.State}} &nbsp;
-								{{domestic_court.ZIP_Code}}
-								</br>{{domestic_court.Contact_info}}
-								</br>
-								
-								</br>{{domestic_court.Address_Note}}
-								</br>
-								</br><strong>Hours: </strong></br>{{domestic_court.Hours}}     
+								</br>{{domestic_court.City}},&nbsp; {{domestic_court.State}} &nbsp; {{domestic_court.ZIP_Code}}
+								</br><div ng-bind-html="domestic_court.Contact_info">{{domestic_court.Contact_info}}</div>
+								</br><div ng-bind-html="domestic_court.Address_Note">{{domestic_court.Address_Note}}</div>
+								</br><strong>Hours: </strong></br><div ng-bind-html="domestic_court.Hours">{{domestic_court.Hours}}</div>     
                                 </div>
 								
                             </div>
@@ -797,7 +744,9 @@
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab five')">Procedural Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab five'), 'ion-chevron-right': !isOpenTab('tab five')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">{{domestic_court.Procedural_info}}</div>
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab five')">
+                                    <div ng-bind-html="domestic_court.Procedural_info">{{domestic_court.Procedural_info}}</div>
+                                </div>
                             </div>
                             <!-- .accordion__tab -->
                         </div>
@@ -816,27 +765,20 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{family_court.Name}}</strong> 
-								</br>{{family_court.Address}}
-								</br>{{family_court.City}}
-								</br>{{family_court.State}} &nbsp;
-								{{family_court.ZIP_Code}}
-								</br>{{family_court.Contact_info}}
-								</br>
-								
-								</br>{{family_court.Address_Note}}
-								</br>
-								 
+    								<strong>{{family_court.Name}}</strong> 
+    								</br>{{family_court.Address}}
+    								</br>{{family_court.City}},&nbsp;{{family_court.State}}&nbsp;{{family_court.ZIP_Code}}
+    								</br><div ng-bind-html="family_court.Contact_info">{{family_court.Contact_info}}</div>								
+    								</br>{{family_court.Address_Note}}								 
                                 </div>
-								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
                                 <div class="accordion__tab-title" data-ng-click="openTab('tab two')">Safe Room Information
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab two'), 'ion-chevron-right': !isOpenTab('tab two')}"></i>
                                 </div>
-                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">{{family_court.Safe_room_info}}
-							
+                                <div class="accordion__tab-content" data-ng-show="isOpenTab('tab two')">
+                                    <div ng-bind-html="family_court.Safe_room_info">{{family_court.Safe_room_info}}</div>
 								</div>
                             </div>
                             <!-- .accordion__tab -->
@@ -881,17 +823,11 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{supreme_court.Name}}</strong> 
-								</br>{{supreme_court.Address}}
-								</br>{{supreme_court.City}}
-								</br>{{supreme_court.State}} &nbsp;
-								{{supreme_court.ZIP_Code}}
-								</br>{{supreme_court.Contact_info}}
-								</br>
-								
-								</br>{{supreme_court.Address_Note}}
-								</br>
-								     
+    								<strong>{{supreme_court.Name}}</strong> 
+    								</br>{{supreme_court.Address}}
+    								</br>{{supreme_court.City}},&nbsp;{{supreme_court.State}}&nbsp;{{supreme_court.ZIP_Code}}
+    								</br>{{supreme_court.Contact_info}}
+    								</br>{{supreme_court.Address_Note}}   
                                 </div>
 								
                             </div>
@@ -946,19 +882,18 @@
                                     <i class="pull-right ion" ng-class="{'ion-chevron-down': isOpenTab('tab one'), 'ion-chevron-right': !isOpenTab('tab one')}"></i>
                                 </div>
                                 <div class="accordion__tab-content" data-ng-show="isOpenTab('tab one')"> 
-								<strong>{{domestic_court.Name}}</strong> 
-								</br>{{domestic_court.Address}}
-								</br>{{domestic_court.City}}
-								</br>{{domestic_court.State}} &nbsp;
-								{{domestic_court.ZIP_Code}}
-								</br>{{domestic_court.Contact_info}}
-								</br>
-								
-								</br>{{domestic_court.Address_Note}}
-								</br>
-								</br><strong>Hours: </strong></br>{{domestic_court.Hours}}     
+    								<strong>{{domestic_court.Name}}</strong> 
+    								</br>{{domestic_court.Address}}
+    								</br>{{domestic_court.City}}
+    								</br>{{domestic_court.State}}&nbsp;
+    								{{domestic_court.ZIP_Code}}
+    								</br>{{domestic_court.Contact_info}}
+    								</br>
+    								
+    								</br>{{domestic_court.Address_Note}}
+    								</br>
+    								</br><strong>Hours: </strong></br>{{domestic_court.Hours}}     
                                 </div>
-								
                             </div>
                             <!-- .accordion__tab -->
                             <div class="accordion__tab">
